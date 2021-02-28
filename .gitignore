@@ -1,0 +1,14 @@
+# venv
+nba_env
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Cache
+*__pycache__
+
+# VS code
+.vscode
+
+.DS_Store
