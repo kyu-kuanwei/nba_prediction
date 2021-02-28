@@ -1,4 +1,3 @@
-import pprint
 import pandas as pd
 
 from yaml import safe_load
