@@ -1,8 +1,13 @@
+import requests
+
 import pandas as pd
 
-from yaml import safe_load
+from bs4 import BeautifulSoup
+
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import leaguedashplayerstats
+
+from .config import load_configs
 
 
 class AllPlayerStats:
@@ -12,10 +17,8 @@ class AllPlayerStats:
         self._all_players = self._find_players()
 
     def _load_configs(self):
-        with open('config.yml') as f:
-            self._config = safe_load(f)
-
-        self._last_n_games = self._config['last_n_games']
+        self._last_n_games = load_configs['last_n_games']
+        self._injuries_url = load_configs['injuries_url']
 
     def _find_players(self):
         # Find all players.
@@ -36,6 +39,17 @@ class AllPlayerStats:
         )
 
         return all_players.round(2)
+
+    def _injuries_players(self):
+        url = requests.get(self._injuries_url)
+        content = url.content
+        soup = BeautifulSoup(content,'html.parser')
+
+        table = soup.find(name= 'div' , attrs= {'class':'Page-colMain'})
+        html_str = str(table)
+
+        data = pd.read_html(html_str)
+        data[0]
 
     @property
     def all_players(self):

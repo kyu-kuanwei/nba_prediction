@@ -8,6 +8,7 @@ import pandas as pd
 from decouple import config
 from selenium import webdriver
 
+from .config import load_configs
 from .enum import ErrorMessage, SleepTime
 
 
@@ -25,10 +26,10 @@ class Scratch:
 
     def _load_env(self):
         self._EXECUTABLE_PATH = config('EXECUTABLE_PATH')
-
         self._FACEBOOK_ACCOUNT = config('FACEBOOK_ACCOUNT')
         self._FACEBOOK_PASSWORD = config('FACEBOOK_PASSWORD')
-        self._WEB_URL = config('URL')
+
+        self._WEB_URL = load_configs['fantasy_url']
 
     def _check_data(self):
         # If the file exists, use the csv file.
