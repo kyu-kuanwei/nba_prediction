@@ -1,4 +1,4 @@
-from .all_players_stats import AllPlayerStats
+from .players_stats import PlayerStats
 from .scratch import Scratch
 
-__all__ = ["AllPlayerStats", "Scratch"]
+__all__ = ["PlayerStats", "Scratch"]

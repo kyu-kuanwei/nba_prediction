@@ -1,12 +1,12 @@
 import pandas as pd
-from scratch import AllPlayerStats, Scratch
+from scratch import PlayerStats, Scratch
 
 
 class DataPipeline:
 
     def __init__(self):
         self._scratch = Scratch()
-        self._all_players_stats = AllPlayerStats()
+        self._all_players_stats = PlayerStats()
 
         self._tomorrow_players = self._scratch.results
         self._all_players = self._all_players_stats.all_players

@@ -7,11 +7,14 @@ from nba_api.stats.static import teams
 from .config import load_configs
 
 
-class AllPlayerStats:
+class PlayerStats:
 
     def __init__(self):
         self._load_configs()
         self._all_players = self._find_players()
+        self._injuries = self._injuries_players()
+        # Filter out injuries.
+        self._all_players = self._all_players[~self._all_players['PLAYER_NAME'].isin(self._injuries['Player'])]
 
     def _load_configs(self):
         self._last_n_games = load_configs['last_n_games']
@@ -38,15 +41,22 @@ class AllPlayerStats:
         return all_players.round(2)
 
     def _injuries_players(self):
+        # Get url content.
         url = requests.get(self._injuries_url)
         content = url.content
-        soup = BeautifulSoup(content,'html.parser')
-
-        table = soup.find(name= 'div' , attrs= {'class':'Page-colMain'})
+        # Parsed by beautifulsoup.
+        soup = BeautifulSoup(content, 'html.parser')
+        table = soup.find(name= 'div', attrs= {'class':'Page-colMain'})
         html_str = str(table)
+        # Create dataframe.
+        raw_injuries = pd.read_html(html_str)
+        # Concate all dataframes.
+        injuries = pd.concat(raw_injuries, ignore_index=True)
+        # Clean injureis players.
+        injuries['Player'] = injuries['Player'].apply(lambda x: x.split(' ', 2)[2])
+        injuries = injuries.loc[:, ['Player']]
 
-        data = pd.read_html(html_str)
-        data[0]
+        return injuries
 
     @property
     def all_players(self):
