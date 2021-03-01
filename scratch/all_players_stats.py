@@ -1,11 +1,8 @@
-import requests
-
 import pandas as pd
-
+import requests
 from bs4 import BeautifulSoup
-
-from nba_api.stats.static import teams
 from nba_api.stats.endpoints import leaguedashplayerstats
+from nba_api.stats.static import teams
 
 from .config import load_configs
 
