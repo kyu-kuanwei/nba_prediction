@@ -10,4 +10,7 @@ nba_env
 # VS code
 .vscode
 
+# Data
+data*
+
 .DS_Store
