@@ -4,10 +4,8 @@ from yaml import safe_load
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import leaguegamefinder, leaguedashplayerstats
 
-from scratch import Scratch
 
-
-class Data:
+class AllPlayerStats:
 
     def __init__(self, scratch_results: pd.DataFrame):
         self._load_configs()
@@ -45,7 +43,6 @@ class Data:
     def _merge_data(self):
         self._valid_players = pd.merge(self._tomorrow_players, self._all_players, on='PLAYER_NAME')
         self._valid_players.columns = map(str.upper, self._valid_players.columns)
-        # self._valid_players = self._valid_players.round(2).sort_values(by='AVG', ascending=False, ignore_index=True)
 
     @property
     def valid_players(self):
