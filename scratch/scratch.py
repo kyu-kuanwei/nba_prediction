@@ -14,15 +14,13 @@ from .enum import ErrorMessage, SleepTime
 class Scratch:
 
     _DATA_PATH = "data"
-    _SCRATCH_FILE_NAME = "data"
+    _CSV_EXTENSION = ".csv"
     _TODAY_DATE = str(datetime.date.today())
 
     def __init__(self):
-        self._SCRATCH_DATA_FILE = os.path.join(
-            self._DATA_PATH, "_".join([self._SCRATCH_FILE_NAME, self._TODAY_DATE]) + ".csv"
-        )
+        self._SCRATCH_DATA_FILE = os.path.join(self._DATA_PATH, self._TODAY_DATE + self._CSV_EXTENSION)
+        # Load enviornment variables.
         self._load_env()
-        # self._scratch()
         self._check_data()
         self._clean_dataframe()
 
@@ -34,14 +32,15 @@ class Scratch:
         self._WEB_URL = config('URL')
 
     def _check_data(self):
+        # If the file exists, use the csv file.
         if os.path.exists(self._SCRATCH_DATA_FILE):
             self._nba_data = pd.read_csv(self._SCRATCH_DATA_FILE)
         else:
+            # Scratch from the website.
             self._scratch()
 
     def _scratch(self):
         self._browser = webdriver.Chrome(executable_path=self._EXECUTABLE_PATH)
-
         # Open UDN fantansy website.
         try:
             self._browser.get(self._WEB_URL)
@@ -99,8 +98,6 @@ class Scratch:
         # Filter out injured players.
         self._nba_data = self._nba_data[~self._nba_data.playerId.isin(injured_players)]
 
-        self._export_to_csv()
-
     def _export_to_csv(self):
         # Export to a cache csv file.
         self._nba_data.to_csv(self._SCRATCH_DATA_FILE, index=False)
@@ -113,6 +110,8 @@ class Scratch:
         # Convert rating to integer type.
         self._nba_data['rating'] = pd.to_numeric(self._nba_data['rating'], errors="coerce", downcast="integer")
         self._nba_data.dropna(inplace=True)
+        # Export to a csv file.
+        self._export_to_csv()
 
     @property
     def results(self) -> pd.DataFrame:
