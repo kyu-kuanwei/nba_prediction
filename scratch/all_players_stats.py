@@ -2,7 +2,7 @@ import pandas as pd
 
 from yaml import safe_load
 from nba_api.stats.static import teams
-from nba_api.stats.endpoints import leaguegamefinder, leaguedashplayerstats
+from nba_api.stats.endpoints import leaguedashplayerstats
 
 
 class AllPlayerStats:
@@ -36,7 +36,7 @@ class AllPlayerStats:
             + all_players['BLK'] * 3
             - all_players['TOV']
         )
-        all_players.sort_values(by='SCR', ascending=False, inplace=True, ignore_index=True)
+        # all_players.sort_values(by='SCR', ascending=False, inplace=True, ignore_index=True)
 
         return all_players.round(2)
 

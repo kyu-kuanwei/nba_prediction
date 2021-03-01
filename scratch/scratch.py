@@ -22,7 +22,6 @@ class Scratch:
         # Load enviornment variables.
         self._load_env()
         self._check_data()
-        self._clean_dataframe()
 
     def _load_env(self):
         self._EXECUTABLE_PATH = config('EXECUTABLE_PATH')
@@ -38,6 +37,8 @@ class Scratch:
         else:
             # Scratch from the website.
             self._scratch()
+            # Clean dataframe
+            self._clean_dataframe()
 
     def _scratch(self):
         self._browser = webdriver.Chrome(executable_path=self._EXECUTABLE_PATH)
@@ -98,10 +99,6 @@ class Scratch:
         # Filter out injured players.
         self._nba_data = self._nba_data[~self._nba_data.playerId.isin(injured_players)]
 
-    def _export_to_csv(self):
-        # Export to a cache csv file.
-        self._nba_data.to_csv(self._SCRATCH_DATA_FILE, index=False)
-
     def _clean_dataframe(self):
         # Merge players name.
         self._nba_data['PLAYER_NAME'] = self._nba_data.loc[:, ['firstName', 'lastName']].agg(' '.join, axis=1)
@@ -112,6 +109,10 @@ class Scratch:
         self._nba_data.dropna(inplace=True)
         # Export to a csv file.
         self._export_to_csv()
+
+    def _export_to_csv(self):
+        # Export to a cache csv file.
+        self._nba_data.to_csv(self._SCRATCH_DATA_FILE, index=False)
 
     @property
     def results(self) -> pd.DataFrame:
