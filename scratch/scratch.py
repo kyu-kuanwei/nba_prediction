@@ -56,7 +56,7 @@ class Scratch:
             connect_fb_button.click()
             time.sleep(SleepTime.SHORT_SLEEP_TIME)
         except BaseException:
-            print(ErrorMessage.FACEBOOK_PAGE_OPEN_ERROR)
+            print(ErrorMessage.FACEBOOK_PAGE_OPEN_ERROR.value)
             exit(102)
 
         # Login to Facebook.
@@ -70,7 +70,7 @@ class Scratch:
             login_button.click()
             time.sleep(SleepTime.LONG_SLEEP_TIME)
         except BaseException:
-            print(ErrorMessage.FACEBOOK_LOGIN_ERROR)
+            print(ErrorMessage.FACEBOOK_LOGIN_ERROR.value)
             exit(103)
 
         # Start playing.
@@ -79,7 +79,7 @@ class Scratch:
             start.click()
             time.sleep(SleepTime.SHORT_SLEEP_TIME)
         except BaseException:
-            print(ErrorMessage.START_PLAYING_ERROR)
+            print(ErrorMessage.START_PLAYING_ERROR.value)
             exit(104)
 
         #Scrath results.
@@ -91,7 +91,7 @@ class Scratch:
             # Close browser.
             self._browser.close()
         except BaseException:
-            print(ErrorMessage.SCRATCH_ERROR)
+            print(ErrorMessage.SCRATCH_ERROR.value)
             exit(105)
 
         # Build dataframe.
