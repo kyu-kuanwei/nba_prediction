@@ -35,6 +35,8 @@ class Scratch:
         if os.path.exists(self._SCRATCH_DATA_FILE):
             self._nba_data = pd.read_csv(self._SCRATCH_DATA_FILE)
         else:
+            # Make data directory.
+            os.mkdir(self._DATA_PATH)
             # Scratch from the website.
             self._scratch()
             # Clean dataframe
