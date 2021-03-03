@@ -37,6 +37,7 @@ class DataPipeline:
         }
         self._valid_players = self._valid_players.replace({'POSITION': position_map})
         self._valid_players['AVG'] = self._valid_players['SCR'] / self._valid_players['RATING']
+        self._valid_players.AVG = self._valid_players.AVG.round(2)
         self._valid_players.sort_values(by='AVG', inplace=True, ascending=False, ignore_index=True)
         self._valid_players = self._valid_players.loc[:70]
 

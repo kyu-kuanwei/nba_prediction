@@ -4,7 +4,7 @@ import pandas as pd
 
 from src.data_pipeline import DataPipeline
 
-MAXIMUM_SIZE = 5
+MAXIMUM_SIZE = 3
 score_heapq = []
 name_dict = {}
 
@@ -85,7 +85,7 @@ def print_result():
         print(f"[{check} Choice]:")
         print(' ' * 10, 'Total Rating:', choice['RATING'].sum())
         print(' ' * 10, 'Total Scores:', round(res, 2))
-        print('-' * 110)
+        print('-' * 100)
         print(choice)
-        print('-' * 110)
+        print('-' * 100)
         check += 1
