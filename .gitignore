@@ -1,9 +1,11 @@
 # venv
-nba_env
+.nba_env
 .env
 
 # Jupyter Notebook
+notebook*
 *.ipynb*
+
 # Cache
 *__pycache__
 
@@ -11,6 +13,6 @@ nba_env
 .vscode
 
 # Data
-data*
+data
 
 .DS_Store
