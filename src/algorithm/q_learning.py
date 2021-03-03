@@ -1,7 +1,7 @@
-import numpy as np
-import pandas as pd
 import itertools
 
+import numpy as np
+import pandas as pd
 from src.data_pipeline import DataPipeline
 
 data_pipeline = DataPipeline()

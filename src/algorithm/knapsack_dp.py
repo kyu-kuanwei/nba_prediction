@@ -2,6 +2,7 @@ import pprint
 
 from src.data_pipeline import DataPipeline
 
+
 def recommand():
     data_pipeline = DataPipeline()
     MAXIMUM_RATING = 430

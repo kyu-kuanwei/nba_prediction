@@ -1,7 +1,7 @@
 import pandas as pd
-
-from src.data_pipeline import DataPipeline
 from ortools.algorithms import pywrapknapsack_solver
+from src.data_pipeline import DataPipeline
+
 
 def recommand():
     # Create the solver.

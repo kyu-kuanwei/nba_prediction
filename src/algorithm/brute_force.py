@@ -1,7 +1,7 @@
 import heapq
+
 import numpy as np
 import pandas as pd
-
 from src.data_pipeline import DataPipeline
 
 MAXIMUM_SIZE = 3
