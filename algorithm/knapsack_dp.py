@@ -1,6 +1,6 @@
 import pprint
 
-from data_pipeline import DataPipeline, Players
+from src.data_pipeline import DataPipeline
 
 def recommand():
     data_pipeline = DataPipeline()

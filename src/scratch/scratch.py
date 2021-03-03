@@ -18,7 +18,7 @@ class Scratch:
     _TODAY_DATE = str(datetime.date.today())
 
     def __init__(self):
-        self._SCRATCH_DATA_FILE = 'data/2021-03-02.csv'
+        self._SCRATCH_DATA_FILE = os.path.join(self._DATA_PATH, self._TODAY_DATE + self._CSV_EXTENSION)
         # Load enviornment variables.
         self._load_env()
         self._check_data()
@@ -109,6 +109,7 @@ class Scratch:
         # Convert rating to integer type.
         self._nba_data['rating'] = pd.to_numeric(self._nba_data['rating'], errors="coerce", downcast="integer")
         self._nba_data.dropna(inplace=True)
+        self._nba_data['position'] = self._nba_data['position'].apply(lambda x: str(x))
         # Export to a csv file.
         self._export_to_csv()
 

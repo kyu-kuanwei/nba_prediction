@@ -1,9 +1,10 @@
 import pandas as pd
-from scratch import PlayerStats, Scratch
+from src.scratch import PlayerStats, Scratch
 
 from .players import Players
 
 from typing import List
+
 
 class DataPipeline:
 

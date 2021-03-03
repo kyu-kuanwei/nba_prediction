@@ -1,4 +1,4 @@
-from data_pipeline import DataPipeline
+from src.data_pipeline import DataPipeline
 import numpy as np
 import pandas as pd
 
@@ -25,24 +25,20 @@ def recommand():
 
     def player_1():
         for idx1 in range(len(guard_list)):
-            # player1 = guard_list[idx1]
             player_2(idx1)
 
     def player_2(idx1):
         for idx2 in range(idx1+1, len(guard_list)):
-            # player2 = guard_list[idx2]
             if len({guard_list[idx1][0], guard_list[idx2][0]}) == 2:
                 player_3(idx1, idx2)
 
     def player_3(idx1, idx2):
         for idx3 in range(len(forward_list)):
-            # player3 = forward_list[idx3]
             if len({guard_list[idx1][0], guard_list[idx2][0], forward_list[idx3][0]}) == 3:
                 player_4(idx1, idx2, idx3)
 
     def player_4(idx1, idx2, idx3):
         for idx4 in range(idx3+1, len(forward_list)):
-            # player4 = forward_list[idx4]
             if len({guard_list[idx1][0], guard_list[idx2][0], forward_list[idx3][0], forward_list[idx4][0]}) == 4:
                 player_5(idx1, idx2, idx3, idx4)
 
