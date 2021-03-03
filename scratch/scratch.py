@@ -18,7 +18,7 @@ class Scratch:
     _TODAY_DATE = str(datetime.date.today())
 
     def __init__(self):
-        self._SCRATCH_DATA_FILE = os.path.join(self._DATA_PATH, self._TODAY_DATE + self._CSV_EXTENSION)
+        self._SCRATCH_DATA_FILE = 'data/2021-03-02.csv'
         # Load enviornment variables.
         self._load_env()
         self._check_data()
@@ -41,7 +41,9 @@ class Scratch:
             self._clean_dataframe()
 
     def _scratch(self):
-        self._browser = webdriver.Chrome(executable_path=self._EXECUTABLE_PATH)
+        option = webdriver.ChromeOptions()
+        option.add_argument("headless")
+        self._browser = webdriver.Chrome(chrome_options=option, executable_path=self._EXECUTABLE_PATH)
         # Open UDN fantansy website.
         try:
             self._browser.get(self._WEB_URL)
