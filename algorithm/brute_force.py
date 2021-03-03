@@ -5,37 +5,15 @@ import pandas as pd
 def recommand():
     data_pipeline = DataPipeline()
 
-    players_list = data_pipeline.valid_players
+    valid_players = data_pipeline.valid_players
 
-    position_trans = {
-        str(['F', 'G']): 'F-G',
-        str(['G', 'F']): 'F-G',
-        str(['F', 'C']): 'C-F',
-        str(['C', 'F']): 'C-F',
-        str(['G']): 'G',
-        str(['F']): 'F',
-        str(['C']): 'C',
-        str(['F', 'F']): 'F',
-        str(['G', 'G']): 'G',
-        str(['C', 'C']): 'C'
-    }
-    players_list = players_list.replace({'POSITION': position_trans})
-    players_list['AVG'] = players_list['SCR'] / players_list['RATING']
-    players_list.sort_values(by='AVG', inplace=True, ascending=False, ignore_index=True)
-    players_list = players_list[:70]
-    # players_list = players_list[players_list.RATING >= 70]
-
-    guards = players_list[(players_list.POSITION == "G") | (players_list.POSITION == "F-G")]
-    forwards = players_list[
-        (players_list.POSITION == "F")
-        | (players_list.POSITION == "F-G")
-        | (players_list.POSITION == "C-F")
+    guards = valid_players[(valid_players.POSITION == "G") | (valid_players.POSITION == "F-G")]
+    forwards = valid_players[
+        (valid_players.POSITION == "F")
+        | (valid_players.POSITION == "F-G")
+        | (valid_players.POSITION == "C-F")
     ]
-    centers = players_list[(players_list.POSITION == "C") | (players_list.POSITION == "C-F")]
-
-    # guard_list = guards.loc[:, ['PLAYER_NAME', 'RATING', 'SCR']].to_numpy()
-    # forward_list = forwards.loc[:, ['PLAYER_NAME', 'RATING', 'SCR']].to_numpy()
-    # center_list = centers.loc[:, ['PLAYER_NAME', 'RATING', 'SCR']].to_numpy()
+    centers = valid_players[(valid_players.POSITION == "C") | (valid_players.POSITION == "C-F")]
 
     guard_list = guards.to_numpy()
     forward_list = forwards.to_numpy()
@@ -85,7 +63,7 @@ def recommand():
                 res = player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2]
                 choice = pd.DataFrame(
                     data=[player1, player2, player3, player4, player5],
-                    columns=players_list.columns
+                    columns=valid_players.columns
                 )
                 name_list.append(choice)
 

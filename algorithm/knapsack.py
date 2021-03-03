@@ -1,6 +1,6 @@
 from data_pipeline import DataPipeline
 from ortools.algorithms import pywrapknapsack_solver
-
+import pandas as pd
 
 def recommand():
     # Create the solver.
@@ -8,10 +8,10 @@ def recommand():
         pywrapknapsack_solver.KnapsackSolver.
         KNAPSACK_MULTIDIMENSION_SCIP_MIP_SOLVER, 'KnapsackExample')
 
-    d = DataPipeline().valid_players
+    valid_players = DataPipeline().valid_players
 
-    values = d['SCR'].tolist()
-    weights = [d['RATING'].tolist()]
+    values = valid_players['SCR'].tolist()
+    weights = [valid_players['RATING'].tolist()]
     capacities = [430]
 
     solver.Init(values, weights, capacities)
@@ -27,9 +27,6 @@ def recommand():
             packed_weights.append(weights[0][i])
             total_weight += weights[0][i]
     print('Total weight:', total_weight)
-    # print('Packed items:', packed_items)
-    # print('Packed_weights:', packed_weights)
 
-    print('Total_Scores:', d.iloc[packed_items]['SCR'].sum())
-    # print(d.iloc[packed_items]['PLAYER_NAME'].tolist())
-    print(d.iloc[packed_items])
+    print('Total_Scores:', valid_players.iloc[packed_items]['SCR'].sum())
+    print(valid_players.iloc[packed_items])
