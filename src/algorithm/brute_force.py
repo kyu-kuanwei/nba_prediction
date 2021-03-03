@@ -1,8 +1,11 @@
+import heapq
 import numpy as np
 import pandas as pd
 
 from src.data_pipeline import DataPipeline
 
+score_heapq = []
+name_dict = {}
 
 def recommand():
     data_pipeline = DataPipeline()
@@ -20,10 +23,6 @@ def recommand():
     guard_list = guards.to_numpy()
     forward_list = forwards.to_numpy()
     center_list = centers.to_numpy()
-
-    global res
-    res = 0
-    name_list = []
 
     def player_1():
         for idx1 in range(len(guard_list)):
@@ -45,7 +44,6 @@ def recommand():
                 player_5(idx1, idx2, idx3, idx4)
 
     def player_5(idx1, idx2, idx3, idx4):
-        global res
         for idx5 in range(len(center_list)):
             player1 = guard_list[idx1]
             player2 = guard_list[idx2]
@@ -56,24 +54,37 @@ def recommand():
             ) and (
                 player1[3] + player2[3] + player3[3] + player4[3] + player5[3] <= 430
             ) and (
-                player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2] > res
+                len(score_heapq) == 0 or
+                (player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2] > score_heapq[0])
             ):
+                # Maintain a fixed size heapq.
+                if len(score_heapq) >= 3:
+                    heapq.heappop(score_heapq)
+
                 res = player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2]
+                heapq.heappush(score_heapq, res)
+
                 choice = pd.DataFrame(
                     data=[player1, player2, player3, player4, player5],
                     columns=valid_players.columns
                 )
-                name_list.append(choice)
+                # Add to a dictionary for later retrieving.
+                name_dict[res] = choice
 
     player_1()
+    print_result()
 
-    K = 1
-    while K <= 2:
-        print(f"[{K} Choice]:")
-        print(' ' * 10, 'Total Rating:', name_list[-K]['RATING'].sum())
-        print(' ' * 10, 'Total Scores:', round(name_list[-K]['SCR'].sum(), 2))
+def print_result():
+    check = 1
+    # Convert to a maximum heap.
+    heapq._heapify_max(score_heapq)
+    while len(score_heapq) > 0:
+        res = heapq._heappop_max(score_heapq)
+        choice = name_dict[res]
+        print(f"[{check} Choice]:")
+        print(' ' * 10, 'Total Rating:', choice['RATING'].sum())
+        print(' ' * 10, 'Total Scores:', round(res, 2))
         print('-' * 100)
-        print(name_list[-K])
+        print(choice)
         print('-' * 100)
-        K += 1
-
+        check += 1
