@@ -1,6 +1,8 @@
-from src.data_pipeline import DataPipeline
 import numpy as np
 import pandas as pd
+
+from src.data_pipeline import DataPipeline
+
 
 def recommand():
     data_pipeline = DataPipeline()
