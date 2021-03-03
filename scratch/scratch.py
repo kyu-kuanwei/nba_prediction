@@ -18,7 +18,7 @@ class Scratch:
     _TODAY_DATE = str(datetime.date.today())
 
     def __init__(self):
-        self._SCRATCH_DATA_FILE = os.path.join(self._DATA_PATH, self._TODAY_DATE + self._CSV_EXTENSION)
+        self._SCRATCH_DATA_FILE = 'data/2021-03-02.csv'
         # Load enviornment variables.
         self._load_env()
         self._check_data()
