@@ -4,6 +4,7 @@ import pandas as pd
 
 from src.data_pipeline import DataPipeline
 
+MAXIMUM_SIZE = 5
 score_heapq = []
 name_dict = {}
 
@@ -58,7 +59,7 @@ def recommand():
                 (player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2] > score_heapq[0])
             ):
                 # Maintain a fixed size heapq.
-                if len(score_heapq) >= 3:
+                if len(score_heapq) >= MAXIMUM_SIZE:
                     heapq.heappop(score_heapq)
 
                 res = player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2]
@@ -84,7 +85,7 @@ def print_result():
         print(f"[{check} Choice]:")
         print(' ' * 10, 'Total Rating:', choice['RATING'].sum())
         print(' ' * 10, 'Total Scores:', round(res, 2))
-        print('-' * 100)
+        print('-' * 110)
         print(choice)
-        print('-' * 100)
+        print('-' * 110)
         check += 1
