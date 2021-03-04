@@ -1,7 +1,9 @@
-last_n_games: 5
-
 fantasy_url: https://nba.udn.com/fantasy/
 
 injuries_url: https://www.cbssports.com/nba/injuries/
 
 espn_url: https://www.espn.com/nba/schedule/_/date/
+
+# Fantasy_Projections or Averge
+mode: Fantasy_Projections
+last_n_games: 10

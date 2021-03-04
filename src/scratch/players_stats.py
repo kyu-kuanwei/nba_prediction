@@ -5,6 +5,7 @@ from fuzzywuzzy import fuzz
 from nba_api.stats.endpoints import leaguedashplayerstats
 from nba_api.stats.static import teams
 from src.data_pipeline import DataPath
+from src.utils.enum import Mode
 
 from .config import load_configs
 
@@ -21,6 +22,7 @@ class PlayerStats:
         self._filter_injuries()
 
     def _load_configs(self):
+        self._mode = load_configs['mode']
         self._last_n_games = load_configs['last_n_games']
         self._injuries_url = load_configs['injuries_url']
 
@@ -37,21 +39,34 @@ class PlayerStats:
 
     def _find_players(self):
         # Find all players.
-        all_players = leaguedashplayerstats.LeagueDashPlayerStats(last_n_games=self._last_n_games)
-        all_players = all_players.get_data_frames()[0]
+        if self._mode == Mode.FANTASY_PROJECTION.value:
+            all_players = pd.read_csv('data/fantasy/draft-king.csv')
+            all_players = all_players.loc[:, ['Name', 'PTS', 'AST', 'REB', 'STL', 'BLK']]
+            all_players = all_players.rename(columns={'Name' : 'PLAYER_NAME'})
+            all_players['SCR'] = (
+                all_players['PTS']
+                + all_players['REB'] * 1.2
+                + all_players['AST'] * 1.5
+                + all_players['STL'] * 3
+                + all_players['BLK'] * 3
+            )
+        else:
+            # Default
+            all_players = leaguedashplayerstats.LeagueDashPlayerStats(last_n_games=self._last_n_games)
+            all_players = all_players.get_data_frames()[0]
 
-        all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']] = (
-            all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']].div(all_players.GP, axis=0)
-        )
-        all_players = all_players.loc[:, ['PLAYER_NAME', 'PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']]
-        all_players['SCR'] = (
-            all_players['PTS']
-            + all_players['REB'] * 1.2
-            + all_players['AST'] * 1.5
-            + all_players['STL'] * 3
-            + all_players['BLK'] * 3
-            - all_players['TOV']
-        )
+            all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']] = (
+                all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']].div(all_players.GP, axis=0)
+            )
+            all_players = all_players.loc[:, ['PLAYER_NAME', 'PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']]
+            all_players['SCR'] = (
+                all_players['PTS']
+                + all_players['REB'] * 1.2
+                + all_players['AST'] * 1.5
+                + all_players['STL'] * 3
+                + all_players['BLK'] * 3
+                - all_players['TOV']
+            )
 
         return all_players.round(2)
 
@@ -79,6 +94,7 @@ class PlayerStats:
                 # Check name.
                 if fuzz.ratio(player, injury) >= 80:
                     self._all_players.drop(idx, inplace=True)
+
     @property
     def all_players(self):
         return self._all_players

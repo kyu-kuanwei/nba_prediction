@@ -11,3 +11,7 @@ class ErrorMessage(Enum):
     FACEBOOK_LOGIN_ERROR= "Could not login to the Facebook account."
     START_PLAYING_ERROR = "Could not access the playing page."
     SCRATCH_ERROR = "Could not scratch the player stats."
+
+class Mode(Enum):
+    FANTASY_PROJECTION = "Fantasy_Projections"
+    AVERAGE = "Averge"
