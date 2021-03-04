@@ -6,7 +6,7 @@ import time
 import pandas as pd
 from decouple import config
 from selenium import webdriver
-
+from src.data_pipeline import DataPath
 from src.utils.enum import ErrorMessage, SleepTime
 
 from .config import load_configs
@@ -14,12 +14,7 @@ from .config import load_configs
 
 class Scratch:
 
-    _DATA_PATH = "data"
-    _CSV_EXTENSION = ".csv"
-    _TODAY_DATE = str(datetime.date.today())
-
     def __init__(self):
-        self._SCRATCH_DATA_FILE = os.path.join(self._DATA_PATH, self._TODAY_DATE + self._CSV_EXTENSION)
         # Load enviornment variables.
         self._load_env()
         self._check_data()
@@ -33,15 +28,20 @@ class Scratch:
 
     def _check_data(self):
         # If the file exists, use the csv file.
-        if os.path.exists(self._SCRATCH_DATA_FILE):
-            self._nba_data = pd.read_csv(self._SCRATCH_DATA_FILE)
+        if os.path.exists(DataPath.SCRATH_DATA_FILE):
+            self._nba_data = pd.read_csv(DataPath.SCRATCH_DATA_FILE)
         else:
-            # Make data directory.
-            os.mkdir(self._DATA_PATH)
+            # If the directory doesn't exist, create one.
+            if not os.path.exists(DataPath.SCRATH_DATA_PATH):
+                # Make data directory.
+                os.mkdir(DataPath.SCRATH_DATA_PATH)
+
             # Scratch from the website.
             self._scratch()
             # Clean dataframe
             self._clean_dataframe()
+            # Export to a csv file.
+            self._export_to_csv(file_name=DataPath.SCRATH_DATA_FILE, data_frame=self._nba_data)
 
     def _scratch(self):
         option = webdriver.ChromeOptions()
@@ -113,12 +113,10 @@ class Scratch:
         self._nba_data['rating'] = pd.to_numeric(self._nba_data['rating'], errors="coerce", downcast="integer")
         self._nba_data.dropna(inplace=True)
         self._nba_data['position'] = self._nba_data['position'].apply(lambda x: str(x))
-        # Export to a csv file.
-        self._export_to_csv()
 
-    def _export_to_csv(self):
+    def _export_to_csv(self, file_name: str, data_frame: pd.DataFrame):
         # Export to a cache csv file.
-        self._nba_data.to_csv(self._SCRATCH_DATA_FILE, index=False)
+        data_frame.to_csv(file_name, index=False)
 
     @property
     def results(self) -> pd.DataFrame:
