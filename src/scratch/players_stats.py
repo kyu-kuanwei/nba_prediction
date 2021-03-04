@@ -1,3 +1,4 @@
+from fuzzywuzzy import fuzz
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
@@ -16,7 +17,7 @@ class PlayerStats:
         self._all_players = self._find_players()
         self._injuries = self._injuries_players()
         # Filter out injuries.
-        self._all_players = self._all_players[~self._all_players['PLAYER_NAME'].isin(self._injuries['Player'])]
+        self._filter_injuries()
 
     def _load_configs(self):
         self._last_n_games = load_configs['last_n_games']
@@ -71,6 +72,12 @@ class PlayerStats:
 
         return injuries
 
+    def _filter_injuries(self):
+        for idx, player in enumerate(self._all_players['PLAYER_NAME']):
+            for injury in self._injuries['Player']:
+                # Check name.
+                if fuzz.ratio(player, injury) >= 80:
+                    self._all_players.drop(idx, inplace=True)
     @property
     def all_players(self):
         return self._all_players
