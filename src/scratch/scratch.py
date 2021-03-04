@@ -7,8 +7,9 @@ import pandas as pd
 from decouple import config
 from selenium import webdriver
 
+from src.utils.enum import ErrorMessage, SleepTime
+
 from .config import load_configs
-from .enum import ErrorMessage, SleepTime
 
 
 class Scratch:
