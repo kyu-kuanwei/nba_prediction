@@ -7,15 +7,16 @@ class DataPath:
     _SCRATH_PATH = "scratch"
     _STATIC_PATH = "static"
     _CSV_EXTENSION = ".csv"
-    _TODAY_DATE = str(datetime.date.today())
     _NBA_PLAYERS = "nba_players"
     _NBA_TEAMS = "nba_teams"
 
-    # Scratch files.
-    _SCRATH_DATA_FILE_NAME = _TODAY_DATE + _CSV_EXTENSION
+    today_date = datetime.date.today()
 
-    SCRATH_DATA_PATH = os.path.join(_DATA_PATH, _SCRATH_PATH)
-    SCRATH_DATA_FILE = os.path.join(SCRATH_DATA_PATH, _SCRATH_DATA_FILE_NAME)
+    # Scratch files.
+    _SCRATCH_DATA_FILE_NAME = str(today_date) + _CSV_EXTENSION
+
+    SCRATCH_DATA_PATH = os.path.join(_DATA_PATH, _SCRATH_PATH)
+    SCRATCH_DATA_FILE = os.path.join(SCRATCH_DATA_PATH, _SCRATCH_DATA_FILE_NAME)
 
     # Static files.
     _NBA_PLAYERS_DATA_FILE_NAME = _NBA_PLAYERS + _CSV_EXTENSION

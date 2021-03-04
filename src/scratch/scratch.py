@@ -28,20 +28,25 @@ class Scratch:
 
     def _check_data(self):
         # If the file exists, use the csv file.
-        if os.path.exists(DataPath.SCRATH_DATA_FILE):
+        if os.path.exists(DataPath.SCRATCH_DATA_FILE):
+            print(f"File '{DataPath.SCRATCH_DATA_FILE}' exists. Skip scrathing.")
             self._nba_data = pd.read_csv(DataPath.SCRATCH_DATA_FILE)
         else:
             # If the directory doesn't exist, create one.
-            if not os.path.exists(DataPath.SCRATH_DATA_PATH):
+            if not os.path.exists(DataPath.SCRATCH_DATA_PATH):
+                print(f"File '{DataPath.SCRATCH_DATA_PATH}' doesn't exist. Create a directory.")
                 # Make data directory.
-                os.mkdir(DataPath.SCRATH_DATA_PATH)
+                os.mkdir(DataPath.SCRATCH_DATA_PATH)
 
             # Scratch from the website.
+            print("Start scrathing.")
             self._scratch()
+            print("Finish scrathing.")
+
             # Clean dataframe
             self._clean_dataframe()
             # Export to a csv file.
-            self._export_to_csv(file_name=DataPath.SCRATH_DATA_FILE, data_frame=self._nba_data)
+            self._export_to_csv(file_name=DataPath.SCRATCH_DATA_FILE, data_frame=self._nba_data)
 
     def _scratch(self):
         option = webdriver.ChromeOptions()

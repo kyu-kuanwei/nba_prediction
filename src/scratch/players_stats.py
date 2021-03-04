@@ -5,12 +5,14 @@ from nba_api.stats.endpoints import leaguedashplayerstats
 from nba_api.stats.static import teams
 
 from .config import load_configs
-
+from src.data_pipeline import DataPath
 
 class PlayerStats:
 
     def __init__(self):
         self._load_configs()
+        # Scratch from espn website to get the teams today.
+        self._today_matchups: dict = {}
         self._all_players = self._find_players()
         self._injuries = self._injuries_players()
         # Filter out injuries.
@@ -19,6 +21,17 @@ class PlayerStats:
     def _load_configs(self):
         self._last_n_games = load_configs['last_n_games']
         self._injuries_url = load_configs['injuries_url']
+
+    def _teams_play_today(self):
+        today_date = DataPath.today_date.strftime('%T%m%d')
+        espn_url = load_configs['espn_url'] + today_date
+
+        r = requests.get(espn_url)
+        content = r.content
+        soup = BeautifulSoup(content, 'html.parser')
+        for row in soup.select("table.schedule tbody tr"):
+            home_team, away_team = row.select(".team-name")
+            self._today_matchups[home_team.get_text().split(' ')[-1]] = away_team.get_text().split(' ')[-1]
 
     def _find_players(self):
         # Find all players.
