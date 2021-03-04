@@ -1,12 +1,13 @@
-from fuzzywuzzy import fuzz
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from fuzzywuzzy import fuzz
 from nba_api.stats.endpoints import leaguedashplayerstats
 from nba_api.stats.static import teams
+from src.data_pipeline import DataPath
 
 from .config import load_configs
-from src.data_pipeline import DataPath
+
 
 class PlayerStats:
 
