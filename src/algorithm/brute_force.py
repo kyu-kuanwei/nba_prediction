@@ -51,11 +51,12 @@ def recommand():
             player3 = forward_list[idx3]
             player4 = forward_list[idx4]
             player5 = center_list[idx5]
-            if (len({player1[0], player2[0], player3[0], player4[0], player5[0]}) == 5
+            if (
+                len({player1[0], player2[0], player3[0], player4[0], player5[0]}) == 5
             ) and (
                 player1[3] + player2[3] + player3[3] + player4[3] + player5[3] <= 430
             ) and (
-                len(score_heapq) == 0 or
+                len(score_heapq) < MAXIMUM_SIZE or
                 (player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2] > score_heapq[0])
             ):
                 # Maintain a fixed size heapq.

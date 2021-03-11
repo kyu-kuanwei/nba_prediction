@@ -39,9 +39,9 @@ class Scratch:
                 os.mkdir(DataPath.SCRATCH_DATA_PATH)
 
             # Scratch from the website.
-            print("Start scrathing.")
+            print("Start scratching.")
             self._scratch()
-            print("Finish scrathing.")
+            print("Finish scratching.")
 
             # Clean dataframe
             self._clean_dataframe()

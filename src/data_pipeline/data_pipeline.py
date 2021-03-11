@@ -39,7 +39,7 @@ class DataPipeline:
         self._valid_players['AVG'] = self._valid_players['SCR'] / self._valid_players['RATING']
         self._valid_players.AVG = self._valid_players.AVG.round(2)
         self._valid_players.sort_values(by='AVG', inplace=True, ascending=False, ignore_index=True)
-        self._valid_players = self._valid_players.loc[:70]
+        self._valid_players = self._valid_players.loc[:80]
 
     def _build_players_list(self):
         self._player_list = [

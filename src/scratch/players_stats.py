@@ -40,16 +40,18 @@ class PlayerStats:
     def _find_players(self):
         # Find all players.
         if self._mode == Mode.FANTASY_PROJECTION.value:
+            print(f"The mode is {self._mode}. Use the dataset from '{DataPath.FAN_DUEL_FILE}'.")
             all_players = self._mode_fantasy_projections()
         else:
             # Default
+            print(f"The mode is {self._mode}. Use the dataset from 'nba_api'.")
             all_players = self._mode_average_stats()
 
         return all_players
 
     def _mode_fantasy_projections(self) -> pd.DataFrame:
         all_players = pd.read_csv(DataPath.FAN_DUEL_FILE)
-        all_players = all_players.loc[:, ['Name', 'PTS', 'AST', 'REB', 'STL', 'BLK']]
+        all_players = all_players.loc[:, ['Name', 'PTS', 'REB', 'AST', 'STL', 'BLK']]
         all_players = all_players.rename(columns={'Name' : 'PLAYER_NAME'})
         all_players['SCR'] = (
             all_players['PTS']
@@ -63,7 +65,6 @@ class PlayerStats:
     def _mode_average_stats(self) -> pd.DataFrame:
         all_players = leaguedashplayerstats.LeagueDashPlayerStats(last_n_games=self._last_n_games)
         all_players = all_players.get_data_frames()[0]
-
         all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']] = (
             all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']].div(all_players.GP, axis=0)
         )
