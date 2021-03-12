@@ -68,7 +68,8 @@ class PlayerStats:
         all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']] = (
             all_players.loc[:, ['PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']].div(all_players.GP, axis=0)
         )
-        all_players = all_players.loc[:, ['PLAYER_NAME', 'PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']]
+        all_players = all_players.loc[:, ['PLAYER_NAME', 'GP', 'PTS', 'REB', 'AST', 'TOV', 'STL', 'BLK']]
+        all_players = all_players[all_players.GP > 1].reset_index(drop=True)
         all_players['SCR'] = (
             all_players['PTS']
             + all_players['REB'] * 1.2
