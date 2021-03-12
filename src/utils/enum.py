@@ -13,5 +13,6 @@ class ErrorMessage(Enum):
     SCRATCH_ERROR = "Could not scratch the player stats."
 
 class Mode(Enum):
-    FANTASY_PROJECTION = "Fantasy_Projections"
+    FAN_DUEL = "Fan_Duel"
+    DRAFT_KINGS = "Draft_Kings"
     AVERAGE = "Averge"

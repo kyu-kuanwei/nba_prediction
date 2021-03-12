@@ -39,9 +39,12 @@ class PlayerStats:
 
     def _find_players(self):
         # Find all players.
-        if self._mode == Mode.FANTASY_PROJECTION.value:
+        if self._mode == Mode.FAN_DUEL.value:
             print(f"The mode is {self._mode}. Use the dataset from '{DataPath.FAN_DUEL_FILE}'.")
-            all_players = self._mode_fantasy_projections()
+            all_players = self._mode_fantasy_projections(DataPath.FAN_DUEL_FILE)
+        elif self._mode == Mode.DRAFT_KINGS.value:
+            print(f"The mode is {self._mode}. Use the dataset from '{DataPath.DRAFT_KINGS_FILE}'.")
+            all_players = self._mode_fantasy_projections(DataPath.DRAFT_KINGS_FILE)
         else:
             # Default
             print(f"The mode is {self._mode}. Use the dataset from 'nba_api'.")
@@ -49,8 +52,8 @@ class PlayerStats:
 
         return all_players
 
-    def _mode_fantasy_projections(self) -> pd.DataFrame:
-        all_players = pd.read_csv(DataPath.FAN_DUEL_FILE)
+    def _mode_fantasy_projections(self, data_path) -> pd.DataFrame:
+        all_players = pd.read_csv(data_path)
         all_players = all_players.loc[:, ['Name', 'PTS', 'REB', 'AST', 'STL', 'BLK']]
         all_players = all_players.rename(columns={'Name' : 'PLAYER_NAME'})
         all_players['SCR'] = (

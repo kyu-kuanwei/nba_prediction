@@ -4,6 +4,6 @@ injuries_url: https://www.cbssports.com/nba/injuries/
 
 espn_url: https://www.espn.com/nba/schedule/_/date/
 
-# Fantasy_Projections or Averge
-mode: Averge
-last_n_games: 5
+# FAN_DUEL, Draft_Kings, or Averge
+mode: Draft_Kings
+last_n_games: 3
