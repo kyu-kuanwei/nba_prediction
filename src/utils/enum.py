@@ -15,4 +15,5 @@ class ErrorMessage(Enum):
 class Mode(Enum):
     FAN_DUEL = "Fan_Duel"
     DRAFT_KINGS = "Draft_Kings"
+    NUMBER_FIVE = "Number_Five"
     AVERAGE = "Averge"

@@ -14,6 +14,7 @@ class DataPath:
     _NBA_TEAMS = "nba_teams"
     _FAN_DUEL = "fan_duel"
     _DRAFT_KINGS = "draft_kings"
+    _NUMBER_FIVE = "number_five"
 
     _CSV_EXTENSION = ".csv"
 
@@ -36,3 +37,4 @@ class DataPath:
     # Fantasy porjection files.
     FAN_DUEL_FILE = os.path.join(_DATA_PATH, _FANTASY, _FAN_DUEL + _CSV_EXTENSION)
     DRAFT_KINGS_FILE = os.path.join(_DATA_PATH, _FANTASY, _DRAFT_KINGS + _CSV_EXTENSION)
+    NUMBER_FIVE_FILE = os.path.join(_DATA_PATH, _FANTASY, _NUMBER_FIVE + _CSV_EXTENSION)
