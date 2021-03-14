@@ -45,6 +45,9 @@ class PlayerStats:
         elif self._mode == Mode.DRAFT_KINGS.value:
             print(f"The mode is {self._mode}. Use the dataset from '{DataPath.DRAFT_KINGS_FILE}'.")
             all_players = self._mode_fantasy_projections(DataPath.DRAFT_KINGS_FILE)
+        elif self._mode == Mode.NUMBER_FIVE.value:
+            print(f"The mode is {self._mode}. Use the dataset from '{DataPath.NUMBER_FIVE_FILE}'.")
+            all_players = self._mode_fantasy_projections(DataPath.NUMBER_FIVE_FILE)
         else:
             # Default
             print(f"The mode is {self._mode}. Use the dataset from 'nba_api'.")

@@ -57,7 +57,7 @@ def recommand():
                 player1[3] + player2[3] + player3[3] + player4[3] + player5[3] <= 430
             ) and (
                 len(score_heapq) < MAXIMUM_SIZE or
-                (player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2] > score_heapq[0])
+                (player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2] >= score_heapq[0])
             ):
                 # Maintain a fixed size heapq.
                 if len(score_heapq) >= MAXIMUM_SIZE:
