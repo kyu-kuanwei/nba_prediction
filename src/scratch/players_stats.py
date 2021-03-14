@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import requests
 from bs4 import BeautifulSoup
 from fuzzywuzzy import fuzz
@@ -25,6 +26,7 @@ class PlayerStats:
         self._mode = load_configs['mode']
         self._last_n_games = load_configs['last_n_games']
         self._injuries_url = load_configs['injuries_url']
+        self._number_five_url = load_configs['number_five_url']
 
     def _teams_play_today(self):
         today_date = DataPath.today_date.strftime('%T%m%d')
@@ -47,13 +49,66 @@ class PlayerStats:
             all_players = self._mode_fantasy_projections(DataPath.DRAFT_KINGS_FILE)
         elif self._mode == Mode.NUMBER_FIVE.value:
             print(f"The mode is {self._mode}. Use the dataset from '{DataPath.NUMBER_FIVE_FILE}'.")
-            all_players = self._mode_fantasy_projections(DataPath.NUMBER_FIVE_FILE)
+            stats = self._scratch_numberfive()
+            df = self._mode_number_five_clean_dataframe(stats)
+            all_players = self._mode_number_five_projections(DataPath.NUMBER_FIVE_FILE)
         else:
             # Default
             print(f"The mode is {self._mode}. Use the dataset from 'nba_api'.")
             all_players = self._mode_average_stats()
 
         return all_players
+
+    def _scratch_numberfive(self) -> list:
+        print("Start scracthing data from number five website.")
+        url = self._number_five_url
+        page = requests.get(url)
+        content = page.content
+        soup = BeautifulSoup(content, 'html.parser')
+        stats = []
+        for tr in soup.find_all('tr'):
+            tds = tr.find_all('td')
+            try:
+                name = tr.find_all('a')
+                clean = [t.text.strip() for t in tds]
+                clean.append(name[1].text.strip())
+                stats.append(clean[5:])
+            except:
+                continue
+        print("Finish scratching number five data.")
+
+        return stats
+
+    def _mode_number_five_clean_dataframe(self, stats: list):
+        col_names = ['PTS', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'Name']
+        df = pd.DataFrame(np.array(stats), columns=col_names)
+        df = df[['Name', 'PTS', 'REB', 'AST', 'STL', 'BLK', 'TOV']]
+        df['PTS'] = pd.to_numeric(df['PTS'], errors="coerce", downcast="float")
+        df['REB'] = pd.to_numeric(df['REB'], errors="coerce", downcast="float")
+        df['AST'] = pd.to_numeric(df['AST'], errors="coerce", downcast="float")
+        df['STL'] = pd.to_numeric(df['STL'], errors="coerce", downcast="float")
+        df['BLK'] = pd.to_numeric(df['BLK'], errors="coerce", downcast="float")
+        df['TOV'] = pd.to_numeric(df['TOV'], errors="coerce", downcast="float")
+        df.dropna(inplace=True)
+        df['Name'] = df['Name'].convert_dtypes()
+        df = df.round(2)
+
+        print(f"Export the scracthed data to {DataPath.NUMBER_FIVE_FILE}")
+        df.to_csv(DataPath.NUMBER_FIVE_FILE)
+
+    def _mode_number_five_projections(self, data_path):
+        all_players = pd.read_csv(data_path)
+        all_players = all_players.loc[:, ['Name', 'PTS', 'REB', 'AST', 'STL', 'BLK', 'TOV']]
+        all_players = all_players.rename(columns={'Name' : 'PLAYER_NAME'})
+        all_players['SCR'] = (
+            all_players['PTS']
+            + all_players['REB'] * 1.2
+            + all_players['AST'] * 1.5
+            + all_players['STL'] * 3
+            + all_players['BLK'] * 3
+            - all_players['TOV']
+        )
+        return all_players.round(2)
 
     def _mode_fantasy_projections(self, data_path) -> pd.DataFrame:
         all_players = pd.read_csv(data_path)

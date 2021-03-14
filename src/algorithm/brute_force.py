@@ -73,7 +73,9 @@ def recommand():
                 # Add to a dictionary for later retrieving.
                 name_dict[res] = choice
 
+    print("Start calculating the maximum combination.")
     player_1()
+    print("Finish calculating")
     print_result()
 
 def print_result():

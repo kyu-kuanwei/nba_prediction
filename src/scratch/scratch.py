@@ -39,16 +39,16 @@ class Scratch:
                 os.mkdir(DataPath.SCRATCH_DATA_PATH)
 
             # Scratch from the website.
-            print("Start scratching.")
-            self._scratch()
+            print("Start scratching player info from UDN website.")
+            self._scratch_udn()
             print("Finish scratching.")
 
             # Clean dataframe
-            self._clean_dataframe()
+            self._clean_udn_dataframe()
             # Export to a csv file.
             self._export_to_csv(file_name=DataPath.SCRATCH_DATA_FILE, data_frame=self._nba_data)
 
-    def _scratch(self):
+    def _scratch_udn(self):
         option = webdriver.ChromeOptions()
         option.add_argument("headless")
         self._browser = webdriver.Chrome(chrome_options=option, executable_path=self._EXECUTABLE_PATH)
@@ -109,7 +109,7 @@ class Scratch:
         # Filter out injured players.
         self._nba_data = self._nba_data[~self._nba_data.playerId.isin(injured_players)]
 
-    def _clean_dataframe(self):
+    def _clean_udn_dataframe(self):
         # Merge players name.
         self._nba_data['PLAYER_NAME'] = self._nba_data.loc[:, ['firstName', 'lastName']].agg(' '.join, axis=1)
         # Filter and reorder columns.
