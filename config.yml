@@ -4,6 +4,8 @@ injuries_url: https://www.cbssports.com/nba/injuries/
 
 espn_url: https://www.espn.com/nba/schedule/_/date/
 
+number_five_url: https://www.numberfire.com/nba/daily-fantasy/daily-basketball-projections#_=_
+
 # Fan_Duel, Draft_Kings, Number_Five, or Averge
-mode: Fan_Duel
+mode: Averge
 last_n_games: 8
