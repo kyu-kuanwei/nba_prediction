@@ -68,19 +68,19 @@ class DataPipeline:
                 f"Export player performance based on mode [{mode}] "
                 f"to '{DataPath.PLAYER_AVG_M_NUM_FILE}'."
             )
-            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_NUM_FILE)
+            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_NUM_FILE, index=False)
         elif mode == Mode.AVERAGE.value:
             print(
                 f"Export player performance based on mode [{mode}] "
                 f"to '{DataPath.PLAYER_AVG_M_AVG_FILE}'."
             )
-            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_AVG_FILE)
+            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_AVG_FILE, index=False)
         elif mode == Mode.FAN_DUEL.value:
             print(
                 f"Export player performance based on mode [{mode}] "
                 f"to '{DataPath.PLAYER_AVG_M_FAN_FILE}'."
             )
-            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_FAN_FILE)
+            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_FAN_FILE, index=False)
         else:
             print("Mode is unknown.")
 
