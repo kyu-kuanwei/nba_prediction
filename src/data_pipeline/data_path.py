@@ -6,7 +6,7 @@ class DataPath:
     # Parent directory.
     _DATA_PATH = "data"
     # Sub directories.
-    _SCRATH_PATH = "scratch"
+    _SCRAPE_PATH = "scrape"
     _STATIC_PATH = "static"
     _FANTASY = "fantasy"
 
@@ -20,11 +20,11 @@ class DataPath:
 
     today_date = datetime.date.today()
 
-    # Scratch files.
-    _SCRATCH_DATA_FILE_NAME = str(today_date) + _CSV_EXTENSION
+    # Scrape files.
+    _SCRAPE_DATA_FILE_NAME = str(today_date) + _CSV_EXTENSION
 
-    SCRATCH_DATA_PATH = os.path.join(_DATA_PATH, _SCRATH_PATH)
-    SCRATCH_DATA_FILE = os.path.join(SCRATCH_DATA_PATH, _SCRATCH_DATA_FILE_NAME)
+    SCRAPE_DATA_PATH = os.path.join(_DATA_PATH, _SCRAPE_PATH)
+    SCRAPE_DATA_FILE = os.path.join(SCRAPE_DATA_PATH, _SCRAPE_DATA_FILE_NAME)
 
     # Static files.
     _NBA_PLAYERS_DATA_FILE_NAME = _NBA_PLAYERS + _CSV_EXTENSION

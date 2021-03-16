@@ -15,7 +15,7 @@ class PlayerStats:
 
     def __init__(self):
         self._load_configs()
-        # Scratch from espn website to get the teams today.
+        # Scrape from espn website to get the teams today.
         self._today_matchups: dict = {}
         self._all_players = self._find_players()
         self._injuries = self._injuries_players()
@@ -49,7 +49,7 @@ class PlayerStats:
             all_players = self._mode_fantasy_projections(DataPath.DRAFT_KINGS_FILE)
         elif self._mode == Mode.NUMBER_FIVE.value:
             print(f"The mode is {self._mode}. Use the dataset from '{DataPath.NUMBER_FIVE_FILE}'.")
-            stats = self._scratch_numberfive()
+            stats = self._scrape_numberfive()
             df = self._mode_number_five_clean_dataframe(stats)
             all_players = self._mode_number_five_projections(DataPath.NUMBER_FIVE_FILE)
         else:
@@ -59,8 +59,8 @@ class PlayerStats:
 
         return all_players
 
-    def _scratch_numberfive(self) -> list:
-        print("Start scracthing data from number five website.")
+    def _scrape_numberfive(self) -> list:
+        print("Start scraping data from number five website.")
         url = self._number_five_url
         page = requests.get(url)
         content = page.content
@@ -75,7 +75,7 @@ class PlayerStats:
                 stats.append(clean[5:])
             except:
                 continue
-        print("Finish scratching number five data.")
+        print("Finish scraping number five data.")
 
         return stats
 
@@ -93,7 +93,7 @@ class PlayerStats:
         df['Name'] = df['Name'].convert_dtypes()
         df = df.round(2)
 
-        print(f"Export the scracthed data to {DataPath.NUMBER_FIVE_FILE}")
+        print(f"Export the scraped data to {DataPath.NUMBER_FIVE_FILE}")
         df.to_csv(DataPath.NUMBER_FIVE_FILE)
 
     def _mode_number_five_projections(self, data_path):

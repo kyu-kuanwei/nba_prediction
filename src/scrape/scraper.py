@@ -12,7 +12,7 @@ from src.utils.enum import ErrorMessage, SleepTime
 from .config import load_configs
 
 
-class Scratch:
+class Scraper:
 
     def __init__(self):
         # Load enviornment variables.
@@ -28,27 +28,27 @@ class Scratch:
 
     def _check_data(self):
         # If the file exists, use the csv file.
-        if os.path.exists(DataPath.SCRATCH_DATA_FILE):
-            print(f"File '{DataPath.SCRATCH_DATA_FILE}' exists. Skip scrathing.")
-            self._nba_data = pd.read_csv(DataPath.SCRATCH_DATA_FILE)
+        if os.path.exists(DataPath.SCRAPE_DATA_FILE):
+            print(f"File '{DataPath.SCRAPE_DATA_FILE}' exists. Skip web scraping.")
+            self._nba_data = pd.read_csv(DataPath.SCRAPE_DATA_FILE)
         else:
             # If the directory doesn't exist, create one.
-            if not os.path.exists(DataPath.SCRATCH_DATA_PATH):
-                print(f"File '{DataPath.SCRATCH_DATA_PATH}' doesn't exist. Create a directory.")
+            if not os.path.exists(DataPath.SCRAPE_DATA_PATH):
+                print(f"File '{DataPath.SCRAPE_DATA_PATH}' doesn't exist. Create a directory.")
                 # Make data directory.
-                os.mkdir(DataPath.SCRATCH_DATA_PATH)
+                os.mkdir(DataPath.SCRAPE_DATA_PATH)
 
-            # Scratch from the website.
-            print("Start scratching player info from UDN website.")
-            self._scratch_udn()
-            print("Finish scratching.")
+            # Scraping from the website.
+            print("Start web scraping player info from UDN website.")
+            self._scrape_udn()
+            print("Finish scraping.")
 
             # Clean dataframe
             self._clean_udn_dataframe()
             # Export to a csv file.
-            self._export_to_csv(file_name=DataPath.SCRATCH_DATA_FILE, data_frame=self._nba_data)
+            self._export_to_csv(file_name=DataPath.SCRAPE_DATA_FILE, data_frame=self._nba_data)
 
-    def _scratch_udn(self):
+    def _scrape_udn(self):
         option = webdriver.ChromeOptions()
         option.add_argument("headless")
         self._browser = webdriver.Chrome(chrome_options=option, executable_path=self._EXECUTABLE_PATH)
@@ -92,7 +92,7 @@ class Scratch:
             print(ErrorMessage.START_PLAYING_ERROR.value)
             exit(104)
 
-        #Scrath results.
+        #Scrape results.
         try:
             # Tomorrow players.
             nba_state = self._browser.execute_script('return _NBA_STATE')
@@ -101,7 +101,7 @@ class Scratch:
             # Close browser.
             self._browser.close()
         except BaseException:
-            print(ErrorMessage.SCRATCH_ERROR.value)
+            print(ErrorMessage.SCRAPE_ERROR.value)
             exit(105)
 
         # Build dataframe.

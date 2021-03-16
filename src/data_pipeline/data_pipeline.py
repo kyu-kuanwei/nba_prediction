@@ -1,7 +1,7 @@
 from typing import List
 
 import pandas as pd
-from src.scratch import PlayerStats, Scratch
+from src.scrape import PlayerStats, Scraper
 
 from .players import Players
 
@@ -9,10 +9,10 @@ from .players import Players
 class DataPipeline:
 
     def __init__(self):
-        scratch = Scratch()
+        scraper = Scraper()
         all_players_stats = PlayerStats()
 
-        self._tomorrow_players = scratch.results
+        self._tomorrow_players = scraper.results
         self._players_stats = all_players_stats.all_players
         # Merge tomrrow players with all player stats.
         self._merge_data()
