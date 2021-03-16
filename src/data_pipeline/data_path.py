@@ -6,19 +6,35 @@ class DataPath:
     # Parent directory.
     _DATA_PATH = "data"
     # Sub directories.
+    _AVERAGE_PATH = "average"
+    _FANTASY_PATh = "fantasy"
     _SCRAPE_PATH = "scrape"
     _STATIC_PATH = "static"
-    _FANTASY = "fantasy"
 
     _NBA_PLAYERS = "nba_players"
     _NBA_TEAMS = "nba_teams"
     _FAN_DUEL = "fan_duel"
     _DRAFT_KINGS = "draft_kings"
     _NUMBER_FIVE = "number_five"
+    _AVG = "average"
 
     _CSV_EXTENSION = ".csv"
 
     today_date = datetime.date.today()
+
+    # Players averge stats files.
+    PLAYER_AVG_PATH = os.path.join(_DATA_PATH, _AVERAGE_PATH, str(today_date))
+    # Average mode.
+    PLAYER_AVG_M_AVG_FILE = os.path.join(PLAYER_AVG_PATH, _AVG + _CSV_EXTENSION)
+    # Number five mode.
+    PLAYER_AVG_M_NUM_FILE = os.path.join(PLAYER_AVG_PATH, _NUMBER_FIVE + _CSV_EXTENSION)
+    # Fan Duel mode.
+    PLAYER_AVG_M_FAN_FILE = os.path.join(PLAYER_AVG_PATH, _FAN_DUEL + _CSV_EXTENSION)
+
+    # Fantasy porjection files.
+    FAN_DUEL_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _FAN_DUEL + _CSV_EXTENSION)
+    DRAFT_KINGS_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _DRAFT_KINGS + _CSV_EXTENSION)
+    NUMBER_FIVE_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _NUMBER_FIVE + _CSV_EXTENSION)
 
     # Scrape files.
     _SCRAPE_DATA_FILE_NAME = str(today_date) + _CSV_EXTENSION
@@ -34,7 +50,3 @@ class DataPath:
     NBA_PLAYERS_DATA_FILE = os.path.join(STATIC_DATA_PATH, _NBA_PLAYERS_DATA_FILE_NAME)
     NBA_TEAMS_DATA_FILE = os.path.join(STATIC_DATA_PATH, _NBA_TEAMS_DATA_FILE_NAME)
 
-    # Fantasy porjection files.
-    FAN_DUEL_FILE = os.path.join(_DATA_PATH, _FANTASY, _FAN_DUEL + _CSV_EXTENSION)
-    DRAFT_KINGS_FILE = os.path.join(_DATA_PATH, _FANTASY, _DRAFT_KINGS + _CSV_EXTENSION)
-    NUMBER_FIVE_FILE = os.path.join(_DATA_PATH, _FANTASY, _NUMBER_FIVE + _CSV_EXTENSION)

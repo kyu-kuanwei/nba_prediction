@@ -1,8 +1,11 @@
+import os
 from typing import List
 
 import pandas as pd
-from src.scrape import PlayerStats, Scraper
+from src.scrape import load_configs, PlayerStats, Scraper
+from src.utils.enum import Mode
 
+from .data_path import DataPath
 from .players import Players
 
 
@@ -20,6 +23,8 @@ class DataPipeline:
         self._clean_data_frame()
         # Create a list of player object.
         self._build_players_list()
+        # Export today results as an csv file.
+        self._export_to_csv()
 
     def _merge_data(self):
         self._valid_players = pd.merge(self._tomorrow_players, self._players_stats, on='PLAYER_NAME')
@@ -50,6 +55,34 @@ class DataPipeline:
                 position=row['POSITION']
             ) for _, row in self._valid_players.iterrows()
         ]
+
+    def _export_to_csv(self):
+        if not os.path.exists(DataPath.PLAYER_AVG_PATH):
+            print(f"Create {DataPath.PLAYER_AVG_PATH} directory.")
+            os.mkdir(DataPath.PLAYER_AVG_PATH)
+
+        mode = load_configs['mode']
+
+        if mode == Mode.NUMBER_FIVE.value:
+            print(
+                f"Export player performance based on mode [{mode}] "
+                f"to '{DataPath.PLAYER_AVG_M_NUM_FILE}'."
+            )
+            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_NUM_FILE)
+        elif mode == Mode.AVERAGE.value:
+            print(
+                f"Export player performance based on mode [{mode}] "
+                f"to '{DataPath.PLAYER_AVG_M_AVG_FILE}'."
+            )
+            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_AVG_FILE)
+        elif mode == Mode.FAN_DUEL.value:
+            print(
+                f"Export player performance based on mode [{mode}] "
+                f"to '{DataPath.PLAYER_AVG_M_FAN_FILE}'."
+            )
+            self._valid_players.to_csv(DataPath.PLAYER_AVG_M_FAN_FILE)
+        else:
+            print("Mode is unknown.")
 
     @property
     def valid_players(self) -> pd.DataFrame:
