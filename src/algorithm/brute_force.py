@@ -7,6 +7,7 @@ from src.data_pipeline import DataPipeline
 MAXIMUM_SIZE = 3
 score_heapq = []
 name_dict = {}
+name_set = set()
 
 def recommand():
     data_pipeline = DataPipeline()
@@ -51,23 +52,33 @@ def recommand():
             player3 = forward_list[idx3]
             player4 = forward_list[idx4]
             player5 = center_list[idx5]
-            if (
-                len({player1[0], player2[0], player3[0], player4[0], player5[0]}) == 5
-            ) and (
-                player1[3] + player2[3] + player3[3] + player4[3] + player5[3] <= 430
-            ) and (
-                len(score_heapq) < MAXIMUM_SIZE or
-                (player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2] >= score_heapq[0])
+
+            player_list = [player1, player2, player3, player4, player5]
+            # Players' name list.
+            name_list = [player[0] for player in player_list]
+            name_list.sort()
+            # Combine them as a string.
+            names = '-'.join(name_list)
+            # Players' rating list.
+            rating_list = [player[3] for player in player_list]
+            total_rating = sum(rating_list)
+            # Players' score list.
+            score_list = [player[-2] for player in player_list]
+            total_score = sum(score_list)
+
+            if (len(set(name_list)) == 5) and (total_rating <= 430) and (names not in name_set) and (
+                len(score_heapq) < MAXIMUM_SIZE or (total_score >= score_heapq[0])
             ):
                 # Maintain a fixed size heapq.
                 if len(score_heapq) >= MAXIMUM_SIZE:
                     heapq.heappop(score_heapq)
 
-                res = player1[-2] + player2[-2] + player3[-2] + player4[-2] + player5[-2]
+                res = total_score
                 heapq.heappush(score_heapq, res)
+                name_set.add(names)
 
                 choice = pd.DataFrame(
-                    data=[player1, player2, player3, player4, player5],
+                    data=player_list,
                     columns=valid_players.columns
                 )
                 # Add to a dictionary for later retrieving.
