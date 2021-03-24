@@ -7,8 +7,9 @@ from src.scrape import load_configs
 
 
 class BruteForce:
-    def __init__(self, maximum_size, valid_players):
+    def __init__(self, maximum_size, valid_players, mode=None):
         self.MAXIMUM_SIZE = maximum_size
+        self._mode = mode
         self._score_heapq = []
         self._name_dict = {}
         self._name_set = set()
@@ -85,12 +86,13 @@ class BruteForce:
                     # Add to a dictionary for later retrieving.
                     self._name_dict[res] = choice
 
-        print("Start calculating the maximum combination.")
         player_1()
-        print("Finish calculating")
         self.print_result()
 
     def print_result(self):
+        if not self._mode:
+            print("[Today Best Combination]")
+
         check = 1
         # Convert to a maximum heap.
         heapq._heapify_max(self._score_heapq)
