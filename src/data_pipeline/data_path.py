@@ -1,6 +1,7 @@
 import datetime
 import os
 
+from src.utils.util import Date
 
 class DataPath:
     # Parent directory.
@@ -20,7 +21,7 @@ class DataPath:
 
     _CSV_EXTENSION = ".csv"
 
-    today_date = datetime.date.today()
+    today_date = Date.today_date
 
     # Players averge stats files.
     PLAYER_AVG_PATH = os.path.join(_DATA_PATH, _AVERAGE_PATH, str(today_date))

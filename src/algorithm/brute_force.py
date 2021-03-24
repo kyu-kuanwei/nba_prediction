@@ -3,16 +3,14 @@ import heapq
 import numpy as np
 import pandas as pd
 from src.data_pipeline import DataPipeline
+from src.scrape import load_configs
 
 MAXIMUM_SIZE = 3
 score_heapq = []
 name_dict = {}
 name_set = set()
 
-def recommand():
-    data_pipeline = DataPipeline()
-
-    valid_players = data_pipeline.valid_players
+def recommand(valid_players):
 
     guards = valid_players[(valid_players.POSITION == "G") | (valid_players.POSITION == "F-G")]
     forwards = valid_players[
