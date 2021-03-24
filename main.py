@@ -6,7 +6,7 @@ from src.scrape import Scraper, PlayerStats
 if __name__ == "__main__":
     after_game = AfterGame()
     today_results = after_game.valid_players
-    brute_force.recommand(valid_players=today_results)
+    brute_force.recommand(valid_players=today_results[:50])
 
     # scraper = Scraper()
     # all_players_stats = PlayerStats()
