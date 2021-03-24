@@ -1,4 +1,4 @@
-from src.algorithm import brute_force, knapsack
+from src.algorithm.brute_force import BruteForce
 from src.after_game import AfterGame
 from src.scrape import Scraper, PlayerStats
 
@@ -6,7 +6,7 @@ from src.scrape import Scraper, PlayerStats
 if __name__ == "__main__":
     after_game = AfterGame()
     today_results = after_game.valid_players
-    brute_force.recommand(valid_players=today_results[:50])
+    recommand = BruteForce(maximum_size=1, valid_players=today_results[:50])
 
     # scraper = Scraper()
     # all_players_stats = PlayerStats()
