@@ -23,6 +23,8 @@ class AfterGame:
         self._players_rating = self._find_player_rating()
         # Merge and clean players dataframe.
         self._valid_players = self._clean_data_frame()
+        # Export to the csv file.
+        self._export_to_csv()
 
     def _today_matchups(self) -> pd.DataFrame:
         gamefinder = leaguegamefinder.LeagueGameFinder(
@@ -75,6 +77,15 @@ class AfterGame:
         )
 
         return data_pipeline.valid_players
+
+    def _export_to_csv(self):
+        if not os.path.exists(DataPath.AFTER_GAME_PATH):
+            print(f"{DataPath.AFTER_GAME_PATH} doest not exist. Create the directory.")
+            os.mkdir(DataPath.AFTER_GAME_PATH)
+
+        if not os.path.exists(DataPath.AFTER_GAME_FILE):
+            print(f"Export {DataPath.AFTER_GAME_FILE} file.")
+            self._valid_players.to_csv(DataPath.AFTER_GAME_FILE, index=False)
 
     @property
     def top_ten_players(self):

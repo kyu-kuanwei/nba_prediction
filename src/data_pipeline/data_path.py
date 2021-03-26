@@ -8,6 +8,7 @@ class DataPath:
     _DATA_PATH = "data"
     # Sub directories.
     _AVERAGE_PATH = "average"
+    _AFTER_GAME = "after_game"
     _FANTASY_PATh = "fantasy"
     _SCRAPE_PATH = "scrape"
     _STATIC_PATH = "static"
@@ -31,6 +32,10 @@ class DataPath:
     PLAYER_AVG_M_NUM_FILE = os.path.join(PLAYER_AVG_PATH, _NUMBER_FIVE + _CSV_EXTENSION)
     # Fan Duel mode.
     PLAYER_AVG_M_FAN_FILE = os.path.join(PLAYER_AVG_PATH, _FAN_DUEL + _CSV_EXTENSION)
+
+    # After game files.
+    AFTER_GAME_PATH = os.path.join(_DATA_PATH, _AFTER_GAME, str(today_date))
+    AFTER_GAME_FILE = os.path.join(AFTER_GAME_PATH, _AFTER_GAME + _CSV_EXTENSION)
 
     # Fantasy porjection files.
     FAN_DUEL_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _FAN_DUEL + _CSV_EXTENSION)

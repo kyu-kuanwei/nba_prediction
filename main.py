@@ -8,7 +8,7 @@ if __name__ == "__main__":
     # Today results.
     after_game = AfterGame()
     today_results = after_game.valid_players
-    today_results = BruteForce(maximum_size=1, valid_players=today_results[:50])
+    today_results = BruteForce(maximum_size=3, valid_players=today_results[:50])
 
     # Tomorrow prediction
     scraper = Scraper()

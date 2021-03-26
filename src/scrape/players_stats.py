@@ -135,8 +135,8 @@ class PlayerStats:
             all_players['PTS']
             + all_players['REB'] * 1.2
             + all_players['AST'] * 1.5
-            + all_players['STL'] * 3
-            + all_players['BLK'] * 3
+            + all_players['STL'] * 2
+            + all_players['BLK'] * 2
             - all_players['TOV']
         )
         return all_players.round(2)
