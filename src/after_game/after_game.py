@@ -22,7 +22,10 @@ class AfterGame:
         # Get players' rating. (Scrape from yesterday)
         self._players_rating = self._find_player_rating()
         # Merge and clean players dataframe.
-        self._valid_players = self._clean_data_frame()
+        self._valid_players = self._clean_data_frame(
+            players_rating=self._players_rating,
+            all_players_today=self._all_players_today
+        )
         # Export to the csv file.
         self._export_to_csv()
 
@@ -70,10 +73,10 @@ class AfterGame:
 
         return players_rating
 
-    def _clean_data_frame(self):
+    def _clean_data_frame(self, players_rating, all_players_today):
         data_pipeline = DataPipeline(
-            player_rating=self._players_rating,
-            player_stats=self._all_players_today
+            player_rating=players_rating,
+            player_stats=all_players_today
         )
 
         return data_pipeline.valid_players
