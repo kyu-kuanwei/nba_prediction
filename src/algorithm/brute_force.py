@@ -60,7 +60,7 @@ class BruteForce:
                 name_list = [player[0] for player in player_list]
                 name_list.sort()
                 # Combine them as a string.
-                names = '-'.join(name_list)
+                names = ' '.join(name_list)
                 # Players' rating list.
                 rating_list = [player[3] for player in player_list]
                 total_rating = sum(rating_list)
