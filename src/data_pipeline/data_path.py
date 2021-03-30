@@ -34,8 +34,8 @@ class DataPath:
     PLAYER_AVG_M_FAN_FILE = os.path.join(PLAYER_AVG_PATH, _FAN_DUEL + _CSV_EXTENSION)
 
     # After game files.
-    AFTER_GAME_PATH = os.path.join(_DATA_PATH, _AFTER_GAME, str(today_date))
-    AFTER_GAME_FILE = os.path.join(AFTER_GAME_PATH, _AFTER_GAME + _CSV_EXTENSION)
+    AFTER_GAME_PATH = os.path.join(_DATA_PATH, _AFTER_GAME)
+    AFTER_GAME_FILE = os.path.join(AFTER_GAME_PATH,  str(today_date), _AFTER_GAME + _CSV_EXTENSION)
 
     # Fantasy porjection files.
     FAN_DUEL_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _FAN_DUEL + _CSV_EXTENSION)

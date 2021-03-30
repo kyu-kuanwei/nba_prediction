@@ -10,16 +10,16 @@ from .data_path import DataPath
 class DataPipeline:
 
     def __init__(self, player_rating, player_stats):
-        self._players_rating = player_rating
-        self._players_stats = player_stats
         # Merge tomrrow players with all player stats.
-        self._merge_data()
+        self._valid_players = self._merge_data(df1=player_rating, df2=player_stats)
         # Clean data frame
         self._clean_data_frame()
 
-    def _merge_data(self):
-        self._valid_players = pd.merge(self._players_rating, self._players_stats, on='PLAYER_NAME')
-        self._valid_players.columns = map(str.upper, self._valid_players.columns)
+    def _merge_data(self, df1, df2) -> pd.DataFrame:
+        valid_players = pd.merge(df1, df2, on='PLAYER_NAME')
+        valid_players.columns = map(str.upper, valid_players.columns)
+
+        return valid_players
 
     def _clean_data_frame(self):
         position_map = {
@@ -67,4 +67,3 @@ class DataPipeline:
     @property
     def valid_players(self) -> pd.DataFrame:
         return self._valid_players
-
