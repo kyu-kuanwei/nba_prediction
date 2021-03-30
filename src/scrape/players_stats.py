@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from fuzzywuzzy import fuzz
 from nba_api.stats.endpoints import leaguedashplayerstats
 from nba_api.stats.static import teams
-from src.data_pipeline import DataPath
+from src.data_lib import DataPath
 from src.utils.enum import Mode
 
 from .config import load_configs

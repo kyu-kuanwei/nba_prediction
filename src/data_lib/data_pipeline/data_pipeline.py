@@ -3,8 +3,7 @@ from typing import List
 
 import pandas as pd
 from src.utils.enum import Mode
-
-from .data_path import DataPath
+from src.data_lib import DataPath
 
 
 class DataPipeline:

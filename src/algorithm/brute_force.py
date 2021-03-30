@@ -2,7 +2,7 @@ import heapq
 
 import numpy as np
 import pandas as pd
-from src.data_pipeline import DataPipeline
+from src.data_lib.data_pipeline import DataPipeline
 from src.scrape import load_configs
 
 
@@ -14,6 +14,7 @@ class BruteForce:
         self._name_dict = {}
         self._name_set = set()
         self._recommand(valid_players=valid_players)
+        self.print_result()
 
     def _recommand(self, valid_players):
         guards = valid_players[(valid_players.POSITION == "G") | (valid_players.POSITION == "F-G")]
@@ -87,7 +88,6 @@ class BruteForce:
                     self._name_dict[res] = choice
 
         player_1()
-        self.print_result()
 
     def print_result(self):
         if not self._mode:

@@ -1,7 +1,7 @@
 from src.algorithm.brute_force import BruteForce
 from src.after_game import AfterGame
 from src.scrape import Scraper, PlayerStats, load_configs
-from src.data_pipeline import DataPipeline
+from src.data_lib.data_pipeline import DataPipeline
 
 
 if __name__ == "__main__":

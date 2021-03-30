@@ -6,7 +6,7 @@ import time
 import pandas as pd
 from decouple import config
 from selenium import webdriver
-from src.data_pipeline import DataPath
+from src.data_lib import DataPath
 from src.utils.enum import ErrorMessage, SleepTime
 
 from .config import load_configs

@@ -2,7 +2,8 @@ import os
 import pandas as pd
 
 from src.utils.util import Date
-from src.data_pipeline import DataPath, DataPipeline
+from src.data_lib import DataPath
+from src.data_lib.data_pipeline import DataPipeline
 
 from nba_api.stats.endpoints import leaguegamefinder
 from nba_api.stats.endpoints import boxscoretraditionalv2

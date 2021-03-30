@@ -1,6 +1,6 @@
 import os
 import pandas
-from src.data_pipeline.data_path import DataPath
+from src.data_lib.data_path import DataPath
 
 
 class TopTenPlayer:
