@@ -3,20 +3,37 @@ from typing import List
 
 import pandas as pd
 from src.utils.enum import Mode
-from src.data_lib import DataPath
+from src.data_lib import DataPath, TopTenPlayers
+from src.scrape import Scraper, PlayerStats
 
 
 class DataPipeline:
 
-    def __init__(self, player_rating, player_stats):
+    def __init__(self):
+        scraper = Scraper()
+        all_players_stats = PlayerStats()
+
         # Merge tomrrow players with all player stats.
-        valid_players = self._merge_data(df1=player_rating, df2=player_stats)
+        valid_players = self._merge_data(df1=scraper.results, df2=all_players_stats.all_players)
+        # Merge historical top ten players.
+        valid_players = self._merge_top_ten_players(
+            top_ten_players=TopTenPlayers().history_top_ten_players,
+            valid_players=valid_players
+        )
         # Clean data frame
         self._valid_players = self.clean_data_frame(valid_players=valid_players)
 
     def _merge_data(self, df1, df2) -> pd.DataFrame:
         valid_players = pd.merge(df1, df2, on='PLAYER_NAME')
         valid_players.columns = map(str.upper, valid_players.columns)
+
+
+        return valid_players
+
+    def _merge_top_ten_players(self, top_ten_players, valid_players):
+        mapping = dict(top_ten_players[['PLAYER_NAME', 'COUNT']].values)
+        valid_players['TOP_TEN'] = valid_players.PLAYER_NAME.map(mapping)
+        valid_players['TOP_TEN'] = valid_players['TOP_TEN'].fillna(0)
 
         return valid_players
 
@@ -31,9 +48,19 @@ class DataPipeline:
             str(['C']): 'C',
         }
         valid_players = valid_players.replace({'POSITION': position_map})
+        # AVG calculated by the original SCR (not includes top ten times).
         valid_players['AVG'] = valid_players['SCR'] / valid_players['RATING']
         valid_players.AVG = valid_players.AVG.round(2)
+        # The top ten times will be weighted to effect the final 'SCR'.
+        valid_players['SCR'] = valid_players['SCR'] + valid_players['TOP_TEN'] * 2
         valid_players.sort_values(by='AVG', inplace=True, ascending=False, ignore_index=True)
+
+        column_names = [
+            "PLAYER_NAME", "POSITION", "TEAM", "RATING", "GP", "TOP_TEN",
+            "PTS", "REB", "AST", "STL", "BLK", "TOV", "SCR", "AVG"
+        ]
+
+        valid_players = valid_players.reindex(columns=column_names)
 
         return valid_players.loc[:70]
 

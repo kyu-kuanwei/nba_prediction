@@ -3,7 +3,6 @@ import pandas as pd
 
 from src.utils.util import Date
 from src.data_lib import DataPath
-from src.data_lib.data_pipeline import DataPipeline
 
 from nba_api.stats.endpoints import leaguegamefinder
 from nba_api.stats.endpoints import boxscoretraditionalv2
@@ -24,8 +23,8 @@ class AfterGame:
         self._players_rating = self._find_player_rating()
         # Merge and clean players dataframe.
         self._valid_players = self._clean_data_frame(
-            players_rating=self._players_rating,
-            all_players_today=self._all_players_today
+            df1=self._players_rating,
+            df2=self._all_players_today
         )
         # Export to the csv file.
         self._export_to_csv()
@@ -74,13 +73,25 @@ class AfterGame:
 
         return players_rating
 
-    def _clean_data_frame(self, players_rating, all_players_today):
-        data_pipeline = DataPipeline(
-            player_rating=players_rating,
-            player_stats=all_players_today
-        )
+    def _clean_data_frame(self, df1, df2):
+        valid_players = pd.merge(df1, df2, on='PLAYER_NAME')
+        valid_players.columns = map(str.upper, valid_players.columns)
 
-        return data_pipeline.valid_players
+        position_map = {
+            str(['F', 'G']): 'F-G',
+            str(['G', 'F']): 'F-G',
+            str(['F', 'C']): 'C-F',
+            str(['C', 'F']): 'C-F',
+            str(['G']): 'G',
+            str(['F']): 'F',
+            str(['C']): 'C',
+        }
+        valid_players = valid_players.replace({'POSITION': position_map})
+        valid_players['AVG'] = valid_players['SCR'] / valid_players['RATING']
+        valid_players.AVG = valid_players.AVG.round(2)
+        valid_players.sort_values(by='AVG', inplace=True, ascending=False, ignore_index=True)
+
+        return valid_players.loc[:70]
 
     def _export_to_csv(self):
         if not os.path.exists(DataPath.AFTER_GAME_PATH):

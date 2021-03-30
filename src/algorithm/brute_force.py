@@ -102,7 +102,7 @@ class BruteForce:
             print(f"[{check} Choice]:")
             print(' ' * 10, 'Total Rating:', choice['RATING'].sum())
             print(' ' * 10, 'Total Scores:', round(res, 2))
-            print('-' * 100)
+            print('-' * 105)
             print(choice)
-            print('-' * 100)
+            print('-' * 105)
             check += 1
