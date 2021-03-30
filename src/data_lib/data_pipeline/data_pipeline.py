@@ -4,12 +4,14 @@ from typing import List
 import pandas as pd
 from src.utils.enum import Mode
 from src.data_lib import DataPath, TopTenPlayers
-from src.scrape import Scraper, PlayerStats
+from src.scrape import Scraper, PlayerStats, load_configs
 
 
 class DataPipeline:
 
     def __init__(self):
+        mode = load_configs["mode"]
+
         scraper = Scraper()
         all_players_stats = PlayerStats()
 
@@ -22,6 +24,8 @@ class DataPipeline:
         )
         # Clean data frame
         self._valid_players = self.clean_data_frame(valid_players=valid_players)
+        # Export to csv file.
+        self.export_to_csv(valid_players=self._valid_players, mode=mode)
 
     def _merge_data(self, df1, df2) -> pd.DataFrame:
         valid_players = pd.merge(df1, df2, on='PLAYER_NAME')
