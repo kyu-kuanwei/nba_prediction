@@ -23,7 +23,7 @@ class DataPipeline:
             valid_players=valid_players
         )
         # Clean data frame
-        self._valid_players = self.clean_data_frame(valid_players=valid_players)
+        self._valid_players = self.clean_data_frame(valid_players=valid_players, mode=mode)
         # Export to csv file.
         self.export_to_csv(valid_players=self._valid_players, mode=mode)
 
@@ -41,7 +41,7 @@ class DataPipeline:
 
         return valid_players
 
-    def clean_data_frame(self, valid_players):
+    def clean_data_frame(self, valid_players, mode):
         position_map = {
             str(['F', 'G']): 'F-G',
             str(['G', 'F']): 'F-G',
@@ -59,10 +59,17 @@ class DataPipeline:
         valid_players['SCR'] = valid_players['SCR'] + valid_players['TOP_TEN'] * 2
         valid_players.sort_values(by='AVG', inplace=True, ascending=False, ignore_index=True)
 
-        column_names = [
-            "PLAYER_NAME", "POSITION", "TEAM", "RATING", "GP", "TOP_TEN",
-            "PTS", "REB", "AST", "STL", "BLK", "TOV", "SCR", "AVG"
-        ]
+        column_names = []
+        if mode == Mode.NUMBER_FIVE.value:
+            column_names = [
+                "PLAYER_NAME", "POSITION", "TEAM", "RATING", "TOP_TEN",
+                "PTS", "REB", "AST", "STL", "BLK", "TOV", "SCR", "AVG"
+            ]
+        else:
+            column_names = [
+                "PLAYER_NAME", "POSITION", "TEAM", "RATING", "GP", "TOP_TEN",
+                "PTS", "REB", "AST", "STL", "BLK", "TOV", "SCR", "AVG"
+            ]
 
         valid_players = valid_players.reindex(columns=column_names)
 
