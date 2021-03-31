@@ -13,7 +13,5 @@ class ErrorMessage(Enum):
     SCRAPE_ERROR = "Could not scrape the player stats."
 
 class Mode(Enum):
-    FAN_DUEL = "Fan_Duel"
-    DRAFT_KINGS = "Draft_Kings"
     NUMBER_FIVE = "Number_Five"
     AVERAGE = "Averge"

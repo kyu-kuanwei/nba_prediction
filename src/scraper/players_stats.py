@@ -41,13 +41,7 @@ class PlayerStats:
 
     def _find_players(self):
         # Find all players.
-        if self._mode == Mode.FAN_DUEL.value:
-            print(f"The mode is {self._mode}. Use the dataset from '{DataPath.FAN_DUEL_FILE}'.")
-            all_players = self._mode_fantasy_projections(DataPath.FAN_DUEL_FILE)
-        elif self._mode == Mode.DRAFT_KINGS.value:
-            print(f"The mode is {self._mode}. Use the dataset from '{DataPath.DRAFT_KINGS_FILE}'.")
-            all_players = self._mode_fantasy_projections(DataPath.DRAFT_KINGS_FILE)
-        elif self._mode == Mode.NUMBER_FIVE.value:
+        if self._mode == Mode.NUMBER_FIVE.value:
             print(f"The mode is {self._mode}. Use the dataset from '{DataPath.NUMBER_FIVE_FILE}'.")
             stats = self._scrape_numberfive()
             df = self._mode_number_five_clean_dataframe(stats)
@@ -107,19 +101,6 @@ class PlayerStats:
             + all_players['STL'] * 3
             + all_players['BLK'] * 3
             - all_players['TOV']
-        )
-        return all_players.round(2)
-
-    def _mode_fantasy_projections(self, data_path) -> pd.DataFrame:
-        all_players = pd.read_csv(data_path)
-        all_players = all_players.loc[:, ['Name', 'PTS', 'REB', 'AST', 'STL', 'BLK']]
-        all_players = all_players.rename(columns={'Name' : 'PLAYER_NAME'})
-        all_players['SCR'] = (
-            all_players['PTS']
-            + all_players['REB'] * 1.2
-            + all_players['AST'] * 1.5
-            + all_players['STL'] * 3
-            + all_players['BLK'] * 3
         )
         return all_players.round(2)
 

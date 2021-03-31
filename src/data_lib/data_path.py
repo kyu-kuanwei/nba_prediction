@@ -16,8 +16,6 @@ class DataPath:
 
     _NBA_PLAYERS = "nba_players"
     _NBA_TEAMS = "nba_teams"
-    _FAN_DUEL = "fan_duel"
-    _DRAFT_KINGS = "draft_kings"
     _NUMBER_FIVE = "number_five"
     _AVG = "average"
 
@@ -29,10 +27,6 @@ class DataPath:
     PLAYER_AVG_PATH = os.path.join(_DATA_PATH, _AVERAGE_PATH, str(today_date))
     # Average mode.
     PLAYER_AVG_M_AVG_FILE = os.path.join(PLAYER_AVG_PATH, _AVG + _CSV_EXTENSION)
-    # Number five mode.
-    PLAYER_AVG_M_NUM_FILE = os.path.join(PLAYER_AVG_PATH, _NUMBER_FIVE + _CSV_EXTENSION)
-    # Fan Duel mode.
-    PLAYER_AVG_M_FAN_FILE = os.path.join(PLAYER_AVG_PATH, _FAN_DUEL + _CSV_EXTENSION)
 
     # After game files.
     AFTER_GAME_PATH = os.path.join(_DATA_PATH, _AFTER_GAME)
@@ -40,8 +34,6 @@ class DataPath:
     AFTER_GAME_FILE = os.path.join(AFTER_GAME_FILE_PATH, _AFTER_GAME + _CSV_EXTENSION)
 
     # Fantasy porjection files.
-    FAN_DUEL_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _FAN_DUEL + _CSV_EXTENSION)
-    DRAFT_KINGS_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _DRAFT_KINGS + _CSV_EXTENSION)
     NUMBER_FIVE_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _NUMBER_FIVE + _CSV_EXTENSION)
 
     # Scrape files.

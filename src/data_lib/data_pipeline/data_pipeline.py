@@ -94,12 +94,6 @@ class DataPipeline:
                     f"based on mode [{mode}]."
                 )
                 valid_players.to_csv(DataPath.PLAYER_AVG_M_AVG_FILE, index=False)
-            elif mode == Mode.FAN_DUEL.value:
-                print(
-                    f"Export player performance to '{DataPath.PLAYER_AVG_M_FAN_FILE}' "
-                    f"based on mode [{mode}]."
-                )
-                valid_players.to_csv(DataPath.PLAYER_AVG_M_FAN_FILE, index=False)
         else:
             print(f"Mode is [{mode}]. Don't export to csv file.")
 
