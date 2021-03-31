@@ -7,8 +7,7 @@ from nba_api.stats.endpoints import leaguedashplayerstats
 from nba_api.stats.static import teams
 from src.data_lib import DataPath
 from src.utils.enum import Mode
-
-from .config import load_configs
+from src.utils.util import LoadConfig
 
 
 class PlayerStats:
@@ -23,10 +22,11 @@ class PlayerStats:
         self._filter_injuries()
 
     def _load_configs(self):
-        self._mode = load_configs['mode']
-        self._last_n_games = load_configs['last_n_games']
-        self._injuries_url = load_configs['injuries_url']
-        self._number_five_url = load_configs['number_five_url']
+        self._configs = LoadConfig.config
+        self._mode = self._configs['mode']
+        self._last_n_games = self._configs['last_n_games']
+        self._injuries_url = self._configs['injuries_url']
+        self._number_five_url = self._configs['number_five_url']
 
     def _teams_play_today(self):
         today_date = DataPath.today_date.strftime('%T%m%d')
@@ -135,8 +135,8 @@ class PlayerStats:
             all_players['PTS']
             + all_players['REB'] * 1.2
             + all_players['AST'] * 1.5
-            + all_players['STL'] * 2
-            + all_players['BLK'] * 2
+            + all_players['STL'] * 3
+            + all_players['BLK'] * 3
             - all_players['TOV']
         )
         return all_players.round(2)

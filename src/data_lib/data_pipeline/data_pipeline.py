@@ -3,7 +3,7 @@ from typing import List
 
 import pandas as pd
 from src.data_lib import DataPath, TopTenPlayers
-from src.scrape import PlayerStats, Scraper, load_configs
+from src.scraper import PlayerStats, UdnScraper, load_configs
 from src.utils.enum import Mode
 
 
@@ -12,11 +12,11 @@ class DataPipeline:
     def __init__(self):
         mode = load_configs["mode"]
 
-        scraper = Scraper()
+        rating_data = UdnScraper()
         all_players_stats = PlayerStats()
 
         # Merge tomrrow players with all player stats.
-        valid_players = self._merge_data(df1=scraper.results, df2=all_players_stats.all_players)
+        valid_players = self._merge_data(df1=rating_data.results, df2=all_players_stats.all_players)
         # Merge historical top ten players.
         valid_players = self._merge_top_ten_players(
             top_ten_players=TopTenPlayers().history_top_ten_players,
@@ -83,20 +83,20 @@ class DataPipeline:
 
             if mode == Mode.NUMBER_FIVE.value:
                 print(
-                    f"Export player performance based on mode [{mode}] "
-                    f"to '{DataPath.PLAYER_AVG_M_NUM_FILE}'."
+                    f"Export player performance to '{DataPath.PLAYER_AVG_M_NUM_FILE}' "
+                    f"based on mode [{mode}]."
                 )
                 valid_players.to_csv(DataPath.PLAYER_AVG_M_NUM_FILE, index=False)
             elif mode == Mode.AVERAGE.value:
                 print(
-                    f"Export player performance based on mode [{mode}] "
-                    f"to '{DataPath.PLAYER_AVG_M_AVG_FILE}'."
+                    f"Export player performance to '{DataPath.PLAYER_AVG_M_AVG_FILE}' "
+                    f"based on mode [{mode}]."
                 )
                 valid_players.to_csv(DataPath.PLAYER_AVG_M_AVG_FILE, index=False)
             elif mode == Mode.FAN_DUEL.value:
                 print(
-                    f"Export player performance based on mode [{mode}] "
-                    f"to '{DataPath.PLAYER_AVG_M_FAN_FILE}'."
+                    f"Export player performance to '{DataPath.PLAYER_AVG_M_FAN_FILE}' "
+                    f"based on mode [{mode}]."
                 )
                 valid_players.to_csv(DataPath.PLAYER_AVG_M_FAN_FILE, index=False)
         else:

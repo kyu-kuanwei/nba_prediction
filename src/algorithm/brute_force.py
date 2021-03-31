@@ -3,7 +3,6 @@ import heapq
 import numpy as np
 import pandas as pd
 from src.data_lib.data_pipeline import DataPipeline
-from src.scrape import load_configs
 
 
 class BruteForce:

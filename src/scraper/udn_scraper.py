@@ -8,11 +8,10 @@ from decouple import config
 from selenium import webdriver
 from src.data_lib import DataPath
 from src.utils.enum import ErrorMessage, SleepTime
+from src.utils.util import LoadConfig
 
-from .config import load_configs
 
-
-class Scraper:
+class UdnScraper:
 
     def __init__(self):
         # Load enviornment variables.
@@ -24,7 +23,7 @@ class Scraper:
         self._FACEBOOK_ACCOUNT = config('FACEBOOK_ACCOUNT')
         self._FACEBOOK_PASSWORD = config('FACEBOOK_PASSWORD')
 
-        self._WEB_URL = load_configs['fantasy_url']
+        self._WEB_URL = LoadConfig.config['fantasy_url']
 
     def _check_data(self):
         # If the file exists, use the csv file.
