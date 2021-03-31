@@ -3,14 +3,15 @@ from typing import List
 
 import pandas as pd
 from src.data_lib import DataPath, TopTenPlayers
-from src.scraper import PlayerStats, UdnScraper, load_configs
+from src.scraper import PlayerStats, UdnScraper
 from src.utils.enum import Mode
+from src.utils.util import LoadConfig
 
 
 class DataPipeline:
 
     def __init__(self):
-        mode = load_configs["mode"]
+        mode = LoadConfig.config["mode"]
 
         rating_data = UdnScraper()
         all_players_stats = PlayerStats()
