@@ -2,9 +2,9 @@ import os
 from typing import List
 
 import pandas as pd
-from src.utils.enum import Mode
 from src.data_lib import DataPath, TopTenPlayers
-from src.scrape import Scraper, PlayerStats, load_configs
+from src.scrape import PlayerStats, Scraper, load_configs
+from src.utils.enum import Mode
 
 
 class DataPipeline:

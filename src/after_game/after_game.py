@@ -1,11 +1,9 @@
 import os
+
 import pandas as pd
-
-from src.utils.util import Date
+from nba_api.stats.endpoints import boxscoretraditionalv2, leaguegamefinder
 from src.data_lib import DataPath
-
-from nba_api.stats.endpoints import leaguegamefinder
-from nba_api.stats.endpoints import boxscoretraditionalv2
+from src.utils.util import Date
 
 
 class AfterGame:

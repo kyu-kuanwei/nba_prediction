@@ -3,6 +3,7 @@ import os
 
 from src.utils.util import Date
 
+
 class DataPath:
     # Parent directory.
     _DATA_PATH = "data"
