@@ -94,9 +94,9 @@ class AfterGame:
         return valid_players.loc[:70]
 
     def _export_to_csv(self):
-        if not os.path.exists(DataPath.AFTER_GAME_PATH):
-            print(f"{DataPath.AFTER_GAME_PATH} doest not exist. Create the directory.")
-            os.mkdir(DataPath.AFTER_GAME_PATH)
+        if not os.path.exists(DataPath.AFTER_GAME_FILE_PATH):
+            print(f"{DataPath.AFTER_GAME_FILE_PATH} doest not exist. Create the directory.")
+            os.mkdir(DataPath.AFTER_GAME_FILE_PATH)
 
         if not os.path.exists(DataPath.AFTER_GAME_FILE):
             print(f"Export {DataPath.AFTER_GAME_FILE} file.")

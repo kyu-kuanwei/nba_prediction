@@ -7,6 +7,6 @@ espn_url: https://www.espn.com/nba/schedule/_/date/
 number_five_url: https://www.numberfire.com/nba/daily-fantasy/daily-basketball-projections#_=_
 
 # Fan_Duel, Draft_Kings, Number_Five, or Averge
-mode: Number_Five
+mode: Averge
 # Mode Averge should set the n.
 last_n_games: 5

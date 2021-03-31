@@ -6,7 +6,7 @@ from src.data_lib.data_pipeline import DataPipeline
 
 if __name__ == "__main__":
     # Today results.
-    today_results = BruteForce(maximum_size=2, valid_players=AfterGame().valid_players[:50])
+    today_results = BruteForce(maximum_size=1, valid_players=AfterGame().valid_players[:50])
 
     # Tomorrow prediction
     tomorrow_prediction = BruteForce(
