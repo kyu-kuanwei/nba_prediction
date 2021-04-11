@@ -27,6 +27,8 @@ class DataPath:
     PLAYER_AVG_PATH = os.path.join(_DATA_PATH, _AVERAGE_PATH, str(today_date))
     # Average mode.
     PLAYER_AVG_M_AVG_FILE = os.path.join(PLAYER_AVG_PATH, _AVG + _CSV_EXTENSION)
+    # Number five projection
+    PLAYER_AVG_M_NUM_FILE = os.path.join(PLAYER_AVG_PATH, _NUMBER_FIVE + _CSV_EXTENSION)
 
     # After game files.
     AFTER_GAME_PATH = os.path.join(_DATA_PATH, _AFTER_GAME)

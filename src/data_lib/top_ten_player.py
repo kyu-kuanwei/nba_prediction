@@ -14,7 +14,7 @@ class TopTenPlayers:
         file_name = 'after_game.csv'
         dir_list = os.listdir(DataPath.AFTER_GAME_PATH)
         files = [os.path.join(DataPath.AFTER_GAME_PATH, d, file_name) for d in dir_list]
-        data = [pd.read_csv(f)[:10] for f in files]
+        data = [pd.read_csv(f)[:5] for f in files]
         top_ten_players = pd.concat(data)
 
         return top_ten_players

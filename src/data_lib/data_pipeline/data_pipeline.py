@@ -37,8 +37,8 @@ class DataPipeline:
 
     def _merge_top_ten_players(self, top_ten_players, valid_players):
         mapping = dict(top_ten_players[['PLAYER_NAME', 'COUNT']].values)
-        valid_players['TOP_TEN'] = valid_players.PLAYER_NAME.map(mapping)
-        valid_players['TOP_TEN'] = valid_players['TOP_TEN'].fillna(0)
+        valid_players['TOP5'] = valid_players.PLAYER_NAME.map(mapping)
+        valid_players['TOP5'] = valid_players['TOP5'].fillna(0)
 
         return valid_players
 
@@ -57,18 +57,18 @@ class DataPipeline:
         valid_players['AVG'] = valid_players['SCR'] / valid_players['RATING']
         valid_players.AVG = valid_players.AVG.round(2)
         # The top ten times will be weighted to effect the final 'SCR'.
-        valid_players['SCR'] = valid_players['SCR'] + valid_players['TOP_TEN'] * 2
+        valid_players['SCR'] = valid_players['SCR'] + valid_players['TOP5'] * 2
         valid_players.sort_values(by='AVG', inplace=True, ascending=False, ignore_index=True)
 
         column_names = []
         if mode == Mode.NUMBER_FIVE.value:
             column_names = [
-                "PLAYER_NAME", "POSITION", "TEAM", "RATING", "TOP_TEN",
+                "PLAYER_NAME", "POSITION", "TEAM", "RATING", "TOP5",
                 "PTS", "REB", "AST", "STL", "BLK", "TOV", "SCR", "AVG"
             ]
         else:
             column_names = [
-                "PLAYER_NAME", "POSITION", "TEAM", "RATING", "GP", "TOP_TEN",
+                "PLAYER_NAME", "POSITION", "TEAM", "RATING", "GP", "TOP5",
                 "PTS", "REB", "AST", "STL", "BLK", "TOV", "SCR", "AVG"
             ]
 
