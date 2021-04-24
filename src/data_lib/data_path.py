@@ -5,6 +5,8 @@ from src.utils.util import Date
 
 
 class DataPath:
+    # Project directory.
+    _PATH = '/Users/kuanweiyu/Desktop/kuanwei/programming/nba'
     # Parent directory.
     _DATA_PATH = "data"
     # Sub directories.
@@ -24,31 +26,31 @@ class DataPath:
     today_date = Date.today_date
 
     # Players averge stats files.
-    PLAYER_AVG_PATH = os.path.join(_DATA_PATH, _AVERAGE_PATH, str(today_date))
+    PLAYER_AVG_PATH = os.path.join(_PATH, _DATA_PATH, _AVERAGE_PATH, str(today_date))
     # Average mode.
-    PLAYER_AVG_M_AVG_FILE = os.path.join(PLAYER_AVG_PATH, _AVG + _CSV_EXTENSION)
+    PLAYER_AVG_M_AVG_FILE = os.path.join(_PATH, PLAYER_AVG_PATH, _AVG + _CSV_EXTENSION)
     # Number five projection
-    PLAYER_AVG_M_NUM_FILE = os.path.join(PLAYER_AVG_PATH, _NUMBER_FIVE + _CSV_EXTENSION)
+    PLAYER_AVG_M_NUM_FILE = os.path.join(_PATH, PLAYER_AVG_PATH, _NUMBER_FIVE + _CSV_EXTENSION)
 
     # After game files.
-    AFTER_GAME_PATH = os.path.join(_DATA_PATH, _AFTER_GAME)
-    AFTER_GAME_FILE_PATH = os.path.join(_DATA_PATH, _AFTER_GAME, str(today_date))
-    AFTER_GAME_FILE = os.path.join(AFTER_GAME_FILE_PATH, _AFTER_GAME + _CSV_EXTENSION)
+    AFTER_GAME_PATH = os.path.join(_PATH, _DATA_PATH, _AFTER_GAME)
+    AFTER_GAME_FILE_PATH = os.path.join(_PATH, _DATA_PATH, _AFTER_GAME, str(today_date))
+    AFTER_GAME_FILE = os.path.join(_PATH, AFTER_GAME_FILE_PATH, _AFTER_GAME + _CSV_EXTENSION)
 
     # Fantasy porjection files.
-    NUMBER_FIVE_FILE = os.path.join(_DATA_PATH, _FANTASY_PATh, _NUMBER_FIVE + _CSV_EXTENSION)
+    NUMBER_FIVE_FILE = os.path.join(_PATH, _DATA_PATH, _FANTASY_PATh, _NUMBER_FIVE + _CSV_EXTENSION)
 
     # Scrape files.
     _SCRAPE_DATA_FILE_NAME = str(today_date) + _CSV_EXTENSION
 
-    SCRAPE_DATA_PATH = os.path.join(_DATA_PATH, _SCRAPE_PATH)
-    SCRAPE_DATA_FILE = os.path.join(SCRAPE_DATA_PATH, _SCRAPE_DATA_FILE_NAME)
+    SCRAPE_DATA_PATH = os.path.join(_PATH, _DATA_PATH, _SCRAPE_PATH)
+    SCRAPE_DATA_FILE = os.path.join(_PATH, SCRAPE_DATA_PATH, _SCRAPE_DATA_FILE_NAME)
 
     # Static files.
     _NBA_PLAYERS_DATA_FILE_NAME = _NBA_PLAYERS + _CSV_EXTENSION
     _NBA_TEAMS_DATA_FILE_NAME = _NBA_TEAMS + _CSV_EXTENSION
 
-    STATIC_DATA_PATH = os.path.join(_DATA_PATH, _STATIC_PATH)
-    NBA_PLAYERS_DATA_FILE = os.path.join(STATIC_DATA_PATH, _NBA_PLAYERS_DATA_FILE_NAME)
-    NBA_TEAMS_DATA_FILE = os.path.join(STATIC_DATA_PATH, _NBA_TEAMS_DATA_FILE_NAME)
+    STATIC_DATA_PATH = os.path.join(_PATH, _DATA_PATH, _STATIC_PATH)
+    NBA_PLAYERS_DATA_FILE = os.path.join(_PATH, STATIC_DATA_PATH, _NBA_PLAYERS_DATA_FILE_NAME)
+    NBA_TEAMS_DATA_FILE = os.path.join(_PATH, STATIC_DATA_PATH, _NBA_TEAMS_DATA_FILE_NAME)
 

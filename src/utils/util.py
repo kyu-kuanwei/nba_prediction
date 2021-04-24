@@ -1,3 +1,5 @@
+import os
+from decouple import config
 from datetime import date, timedelta
 
 from yaml import safe_load
@@ -9,5 +11,5 @@ class Date:
 
 
 class LoadConfig:
-    with open('config.yml') as f:
+    with open(os.path.join(config('PROJECT_PATH'), 'config.yml')) as f:
         config = safe_load(f)
