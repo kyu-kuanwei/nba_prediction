@@ -1,0 +1,292 @@
+PLAYER_NAME,position,team,rating
+John Collins,"['F', 'C']",ATL,84
+Nathan Knight,"['F', 'C']",ATL,70
+Kris Dunn,['G'],ATL,76
+Solomon Hill,['F'],ATL,70
+De'Andre Hunter,"['F', 'G']",ATL,81
+Clint Capela,['C'],ATL,86
+Rajon Rondo,['G'],ATL,75
+Brandon Goodwin,['G'],ATL,70
+Danilo Gallinari,['F'],ATL,79
+Tony Snell,['G'],ATL,73
+Skylar Mays,['G'],ATL,71
+Bogdan Bogdanovic,['G'],ATL,76
+Kevin Huerter,"['G', 'F']",ATL,76
+Onyeka Okongwu,"['F', 'C']",ATL,75
+Bruno Fernando,"['F', 'C']",ATL,72
+Cam Reddish,"['F', 'G']",ATL,74
+Trae Young,['G'],ATL,87
+Jaylen Brown,"['G', 'F']",BOS,89
+Semi Ojeleye,['F'],BOS,73
+Jayson Tatum,"['F', 'G']",BOS,90
+Tristan Thompson,"['C', 'F']",BOS,78
+Jeff Teague,['G'],BOS,74
+Kemba Walker,['G'],BOS,85
+Marcus Smart,['G'],BOS,80
+Carsen Edwards,['G'],BOS,70
+Tacko Fall,['C'],BOS,70
+Javonte Green,"['G', 'F']",BOS,73
+Romeo Langford,"['G', 'F']",BOS,70
+Aaron Nesmith,"['G', 'F']",BOS,71
+Payton Pritchard,['G'],BOS,75
+Tremont Waters,['G'],BOS,69
+Grant Williams,['F'],BOS,71
+Robert Williams III,"['C', 'F']",BOS,77
+Daniel Theis,"['F', 'C']",BOS,78
+Ryan Arcidiacono,['G'],CHI,72
+Cristiano Felicio,"['F', 'C']",CHI,72
+Zach LaVine,"['G', 'F']",CHI,88
+Lauri Markkanen,"['F', 'C']",CHI,83
+Tomas Satoransky,"['G', 'F']",CHI,75
+Denzel Valentine,['G'],CHI,74
+Luke Kornet,"['F', 'C']",CHI,73
+Otto Porter Jr.,['F'],CHI,80
+Thaddeus Young,['F'],CHI,80
+Garrett Temple,"['G', 'F']",CHI,73
+Wendell Carter Jr.,"['C', 'F']",CHI,80
+Devon Dotson,['G'],CHI,68
+Daniel Gafford,"['F', 'C']",CHI,77
+Chandler Hutchison,"['F', 'G']",CHI,75
+Adam Mokoka,['G'],CHI,68
+Coby White,['G'],CHI,79
+Patrick Williams,['F'],CHI,76
+Matthew Dellavedova,['G'],CLE,70
+Kevin Love,"['F', 'C']",CLE,82
+Larry Nance Jr.,"['F', 'C']",CLE,78
+Cedi Osman,['F'],CLE,74
+JaVale McGee,"['C', 'F']",CLE,78
+Jarrett Allen,['C'],CLE,84
+Damyean Dotson,['G'],CLE,71
+Andre Drummond,['C'],CLE,83
+Taurean Prince,['F'],CLE,73
+Darius Garland,['G'],CLE,77
+Isaac Okoro,"['F', 'G']",CLE,73
+Collin Sexton,['G'],CLE,83
+Lamar Stevens,['F'],CLE,69
+Brodric Thomas,['G'],CLE,66
+Dean Wade,"['F', 'C']",CLE,70
+Dylan Windler,"['G', 'F']",CLE,75
+Stephen Curry,['G'],GSW,96
+Draymond Green,['F'],GSW,80
+Damion Lee,"['G', 'F']",GSW,75
+Kevon Looney,['F'],GSW,76
+Brad Wanamaker,['G'],GSW,72
+Kelly Oubre Jr.,"['F', 'G']",GSW,79
+Andrew Wiggins,"['F', 'G']",GSW,79
+Kent Bazemore,"['G', 'F']",GSW,76
+Nico Mannion,['G'],GSW,69
+Mychal Mulder,['G'],GSW,72
+Eric Paschall,['F'],GSW,79
+Jordan Poole,['G'],GSW,72
+Alen Smailagic,['F'],GSW,71
+Juan Toscano-Anderson,['F'],GSW,75
+James Wiseman,['C'],GSW,79
+Danuel House Jr.,"['F', 'G']",HOU,73
+Eric Gordon,['G'],HOU,80
+Justin Patton,['C'],HOU,69
+Sterling Brown,"['G', 'F']",HOU,74
+Victor Oladipo,['G'],HOU,81
+Christian Wood,['F'],HOU,85
+Dante Exum,['G'],HOU,73
+Ben McLemore,['G'],HOU,73
+John Wall,['G'],HOU,82
+David Nwaba,"['G', 'F']",HOU,77
+P.J. Tucker,['F'],HOU,74
+Rodions Kurucs,['F'],HOU,71
+Anthony Lamb,['F'],HOU,66
+Kenyon Martin Jr.,['F'],HOU,67
+Kevin Porter Jr.,"['G', 'F']",HOU,75
+Jae'Sean Tate,['F'],HOU,77
+Paul George,['F'],LAC,90
+Ivica Zubac,['C'],LAC,79
+Patrick Beverley,['G'],LAC,78
+Kawhi Leonard,['F'],LAC,96
+Serge Ibaka,"['F', 'C']",LAC,81
+Reggie Jackson,['G'],LAC,77
+Patrick Patterson,['F'],LAC,72
+Luke Kennard,['G'],LAC,74
+Lou Williams,['G'],LAC,80
+Marcus Morris Sr.,['F'],LAC,78
+Nicolas Batum,"['G', 'F']",LAC,77
+Amir Coffey,"['G', 'F']",LAC,69
+Mfiondu Kabengele,"['F', 'C']",LAC,72
+Terance Mann,"['G', 'F']",LAC,72
+Daniel Oturu,['C'],LAC,71
+Jay Scrubb,['G'],LAC,67
+Gorgui Dieng,['C'],MEM,76
+Tyus Jones,['G'],MEM,75
+Justise Winslow,"['F', 'G']",MEM,77
+Kyle Anderson,"['F', 'G']",MEM,81
+Dillon Brooks,"['G', 'F']",MEM,76
+Jonas Valanciunas,['C'],MEM,82
+Grayson Allen,['G'],MEM,76
+Desmond Bane,['G'],MEM,76
+Brandon Clarke,"['F', 'G']",MEM,81
+Jaren Jackson Jr.,"['F', 'C']",MEM,83
+John Konchar,['G'],MEM,74
+Sean McDermott,['F'],MEM,69
+De'Anthony Melton,['G'],MEM,77
+Ja Morant,['G'],MEM,86
+Jontay Porter,"['C', 'F']",MEM,68
+Killian Tillie,"['F', 'C']",MEM,67
+Xavier Tillman,['F'],MEM,77
+Udonis Haslem,['F'],MIA,70
+Avery Bradley,['G'],MIA,76
+Bam Adebayo,"['C', 'F']",MIA,88
+Goran Dragic,['G'],MIA,80
+Kelly Olynyk,"['F', 'C']",MIA,74
+Jimmy Butler,['F'],MIA,90
+Andre Iguodala,"['G', 'F']",MIA,73
+Maurice Harkless,"['F', 'G']",MIA,72
+Precious Achiuwa,['F'],MIA,78
+Tyler Herro,['G'],MIA,80
+Kendrick Nunn,['G'],MIA,77
+KZ Okpala,"['F', 'G']",MIA,71
+Duncan Robinson,['F'],MIA,75
+Chris Silva,['F'],MIA,72
+Max Strus,"['G', 'F']",MIA,72
+Gabe Vincent,['G'],MIA,69
+Karl-Anthony Towns,"['C', 'F']",MIN,89
+Jake Layman,['F'],MIN,74
+Malik Beasley,['G'],MIN,81
+Juancho Hernangomez,['F'],MIN,73
+Ed Davis,"['C', 'F']",MIN,74
+Ricky Rubio,['G'],MIN,75
+D'Angelo Russell,['G'],MIN,83
+Jarrett Culver,"['G', 'F']",MIN,73
+Anthony Edwards,['G'],MIN,77
+Jaden McDaniels,['F'],MIN,72
+Jordan McLaughlin,['G'],MIN,73
+Jaylen Nowell,['G'],MIN,74
+Josh Okogie,['G'],MIN,73
+Naz Reid,"['C', 'F']",MIN,78
+Jarred Vanderbilt,['F'],MIN,76
+Lonzo Ball,['G'],NOP,80
+Sindarius Thornwell,['G'],NOP,71
+Brandon Ingram,['F'],NOP,85
+Eric Bledsoe,['G'],NOP,78
+Steven Adams,['C'],NOP,80
+Willy Hernangomez,"['C', 'F']",NOP,76
+Josh Hart,['G'],NOP,77
+JJ Redick,['G'],NOP,75
+Nickeil Alexander-Walker,['G'],NOP,76
+Wenyen Gabriel,['F'],NOP,70
+Jaxson Hayes,"['C', 'F']",NOP,76
+Kira Lewis Jr.,['G'],NOP,72
+Will Magnay,['C'],NOP,69
+Naji Marshall,['F'],NOP,68
+Nicolo Melli,['F'],NOP,74
+Zion Williamson,['F'],NOP,89
+Darius Miller,['F'],OKC,74
+George Hill,['G'],OKC,78
+Justin Jackson,['F'],OKC,74
+Mike Muscala,"['F', 'C']",OKC,77
+Trevor Ariza,['F'],OKC,74
+Al Horford,"['C', 'F']",OKC,81
+Darius Bazley,"['F', 'G']",OKC,76
+Moses Brown,['C'],OKC,67
+Hamidou Diallo,['G'],OKC,77
+Luguentz Dort,['G'],OKC,76
+Shai Gilgeous-Alexander,"['G', 'F']",OKC,87
+Josh Hall,['F'],OKC,65
+Ty Jerome,"['G', 'F']",OKC,74
+Theo Maledon,['G'],OKC,75
+Aleksej Pokusevski,['C'],OKC,71
+Isaiah Roby,['F'],OKC,76
+Kenrich Williams,"['G', 'F']",OKC,76
+James Ennis III,['F'],ORL,76
+Chasson Randle,['G'],ORL,71
+Khem Birch,['C'],ORL,76
+Evan Fournier,"['G', 'F']",ORL,82
+Aaron Gordon,['F'],ORL,80
+Terrence Ross,"['G', 'F']",ORL,77
+Al-Farouq Aminu,['F'],ORL,75
+Dwayne Bacon,"['G', 'F']",ORL,71
+Michael Carter-Williams,['G'],ORL,74
+Nikola Vucevic,['C'],ORL,87
+Cole Anthony,['G'],ORL,74
+Mo Bamba,['C'],ORL,74
+Gary Clark,['F'],ORL,71
+Karim Mane,['G'],ORL,66
+Chuma Okeke,['F'],ORL,72
+Tobias Harris,['F'],PHI,86
+Mike Scott,['F'],PHI,71
+Joel Embiid,"['C', 'F']",PHI,95
+Furkan Korkmaz,"['G', 'F']",PHI,73
+Seth Curry,['G'],PHI,76
+Terrance Ferguson,"['G', 'F']",PHI,71
+Tony Bradley,"['C', 'F']",PHI,75
+Dwight Howard,"['C', 'F']",PHI,79
+Ben Simmons,"['G', 'F']",PHI,88
+Danny Green,"['G', 'F']",PHI,75
+Isaiah Joe,['G'],PHI,71
+Tyrese Maxey,['G'],PHI,76
+Shake Milton,"['G', 'F']",PHI,78
+Vincent Poirier,"['C', 'F']",PHI,73
+Paul Reed,['F'],PHI,69
+Matisse Thybulle,"['G', 'F']",PHI,74
+Rayjon Tucker,['G'],PHI,69
+Rodney Hood,"['G', 'F']",POR,73
+Enes Kanter,['C'],POR,80
+Derrick Jones Jr.,"['F', 'G']",POR,76
+Robert Covington,['F'],POR,77
+Zach Collins,"['F', 'C']",POR,75
+Damian Lillard,['G'],POR,94
+CJ McCollum,['G'],POR,88
+Jusuf Nurkic,['C'],POR,80
+Harry Giles III,"['F', 'C']",POR,73
+Keljin Blevins,['G'],POR,68
+CJ Elleby,"['F', 'G']",POR,68
+Nassir Little,"['F', 'G']",POR,75
+Anfernee Simons,['G'],POR,75
+Gary Trent Jr.,"['G', 'F']",POR,78
+Carmelo Anthony,['F'],POR,79
+LaMarcus Aldridge,"['C', 'F']",SAS,81
+DeMar DeRozan,"['G', 'F']",SAS,87
+Rudy Gay,"['F', 'G']",SAS,78
+Patty Mills,['G'],SAS,78
+Dejounte Murray,['G'],SAS,83
+Jakob Poeltl,['C'],SAS,78
+Derrick White,['G'],SAS,79
+Trey Lyles,['F'],SAS,74
+Keita Bates-Diop,['F'],SAS,72
+Drew Eubanks,"['F', 'C']",SAS,71
+Keldon Johnson,"['F', 'G']",SAS,80
+Tre Jones,['G'],SAS,70
+Luka Samanic,['F'],SAS,72
+Devin Vassell,"['G', 'F']",SAS,76
+Lonnie Walker IV,"['G', 'F']",SAS,75
+Quinndary Weatherspoon,['G'],SAS,68
+Fred VanVleet,['G'],TOR,85
+Patrick McCaw,['G'],TOR,73
+OG Anunoby,['F'],TOR,78
+Chris Boucher,"['F', 'C']",TOR,80
+Kyle Lowry,['G'],TOR,84
+Norman Powell,"['G', 'G']",TOR,81
+Pascal Siakam,['F'],TOR,84
+Stanley Johnson,"['F', 'G']",TOR,73
+Aron Baynes,"['C', 'F']",TOR,75
+Henry Ellenson,"['F', 'C']",TOR,69
+DeAndre' Bembry,"['G', 'F']",TOR,74
+Terence Davis,['G'],TOR,75
+Malachi Flynn,['G'],TOR,71
+Jalen Harris,['G'],TOR,68
+Matt Thomas,['G'],TOR,73
+Yuta Watanabe,"['G', 'F']",TOR,72
+Paul Watson,['G'],TOR,67
+Jordan Clarkson,['G'],UTA,84
+Derrick Favors,"['F', 'C']",UTA,80
+Mike Conley,['G'],UTA,85
+Bojan Bogdanovic,['F'],UTA,78
+Rudy Gobert,['C'],UTA,88
+Joe Ingles,"['F', 'G']",UTA,80
+Donovan Mitchell,['G'],UTA,88
+Georges Niang,['F'],UTA,73
+Royce O'Neale,['F'],UTA,76
+Ersan Ilyasova,['F'],UTA,76
+Udoka Azubuike,"['C', 'F']",UTA,71
+Jarrell Brantley,['F'],UTA,67
+Trent Forrest,['G'],UTA,67
+Elijah Hughes,['G'],UTA,70
+Juwan Morgan,['F'],UTA,70
+Miye Oni,"['G', 'F']",UTA,70

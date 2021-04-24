@@ -1,0 +1,82 @@
+PLAYER_NAME,POSITION,TEAM,RATING,PTS,REB,AST,STL,BLK,SCR,AVG
+James Harden,G,BKN,95,27.2,8.0,10.4,1.3,0.8,58.7,0.62
+Russell Westbrook,G,WAS,86,21.1,9.1,9.8,1.3,0.3,51.52,0.6
+Giannis Antetokounmpo,F,MIL,96,27.5,11.4,5.8,1.4,1.3,57.98,0.6
+Nikola Jokic,C,DEN,95,25.9,10.0,8.2,1.6,0.6,56.8,0.6
+Luka Doncic,F-G,DAL,93,28.1,7.8,8.8,1.0,0.6,55.46,0.6
+Bradley Beal,G,WAS,90,31.3,5.3,5.2,1.3,0.5,50.86,0.57
+Domantas Sabonis,C-F,IND,87,20.3,10.8,5.9,1.0,0.6,46.91,0.54
+Ben Simmons,F-G,PHI,88,17.3,7.8,8.2,1.6,0.8,46.16,0.52
+Zach LaVine,F-G,CHI,88,27.4,4.8,5.2,1.0,0.4,45.16,0.51
+Kyrie Irving,G,BKN,91,26.9,4.9,5.8,1.1,0.5,46.28,0.51
+Kyle Lowry,G,TOR,84,18.5,5.4,7.8,1.4,0.3,41.78,0.5
+Richaun Holmes,C-F,SAC,81,16.0,11.1,2.0,0.9,1.8,40.42,0.5
+Stephen Curry,G,GSW,96,27.9,5.5,6.0,1.4,0.2,48.3,0.5
+Kevin Porter Jr.,F-G,HOU,75,15.3,4.4,5.7,1.8,1.1,37.83,0.5
+Bam Adebayo,C-F,MIA,88,17.5,9.3,5.2,1.0,1.1,42.76,0.49
+Jimmy Butler,F,MIA,90,19.3,6.3,6.7,2.0,0.4,44.11,0.49
+Paul George,F,LAC,90,23.3,6.2,5.0,1.1,0.6,43.34,0.48
+Kawhi Leonard,F,LAC,96,25.9,6.3,4.6,1.4,0.6,46.36,0.48
+Jayson Tatum,F-G,BOS,90,23.6,6.5,3.8,1.3,0.6,42.8,0.48
+Tobias Harris,F,PHI,86,21.5,7.7,3.4,0.8,0.8,40.64,0.47
+Ja Morant,G,MEM,86,19.7,3.7,7.7,1.1,0.2,39.59,0.46
+Khris Middleton,F,MIL,86,20.4,5.5,5.4,1.3,0.2,39.6,0.46
+Dejounte Murray,G,SAS,83,16.3,6.5,5.7,1.8,0.1,38.35,0.46
+Jamal Murray,G,DEN,86,22.3,4.0,4.8,1.1,0.3,38.5,0.45
+Jerami Grant,F,DET,83,22.4,5.2,2.5,0.7,0.9,37.19,0.45
+Kristaps Porzingis,C-F,DAL,86,20.9,7.7,1.4,0.5,1.6,38.54,0.45
+Jaylen Brown,F-G,BOS,89,23.3,5.3,3.5,1.1,0.5,39.71,0.45
+Malcolm Brogdon,G,IND,84,20.5,4.3,5.8,1.0,0.2,37.96,0.45
+Buddy Hield,G,SAC,77,20.1,5.3,3.2,0.9,0.3,34.86,0.45
+Caris LeVert,G,IND,83,18.2,4.0,5.5,1.2,0.5,36.35,0.44
+Jrue Holiday,G,MIL,86,15.8,4.5,5.3,1.9,0.6,36.65,0.43
+LaMelo Ball,G,CHA,85,15.3,5.5,6.1,1.6,0.3,36.75,0.43
+Gordon Hayward,F,CHA,85,19.8,4.9,3.9,1.2,0.3,36.03,0.42
+Michael Porter Jr.,F,DEN,82,17.3,7.8,1.1,1.0,1.1,34.61,0.42
+Harrison Barnes,F,SAC,80,18.3,6.5,3.2,0.8,0.2,33.9,0.42
+Collin Sexton,G,CLE,83,22.3,2.8,3.9,1.1,0.1,35.11,0.42
+Kenyon Martin Jr.,F,HOU,67,11.1,6.1,1.2,1.1,1.5,28.02,0.42
+Josh Jackson,F-G,DET,76,15.4,5.1,2.4,1.0,0.9,30.82,0.41
+Chris Boucher,C-F,TOR,80,14.9,7.2,1.1,0.6,1.9,32.69,0.41
+Myles Turner,C-F,IND,81,13.1,6.5,1.0,0.8,2.8,33.2,0.41
+Tyrese Haliburton,G,SAC,83,14.9,4.3,5.3,1.4,0.7,34.31,0.41
+Jonas Valanciunas,C,MEM,82,14.9,10.6,1.6,0.6,0.7,33.92,0.41
+Norman Powell,"['G', 'G']",TOR,81,20.6,3.6,2.3,1.4,0.3,33.47,0.41
+Darius Garland,G,CLE,77,15.8,2.1,5.8,1.1,0.1,30.62,0.4
+Andrew Wiggins,F-G,GSW,79,17.3,4.8,2.3,0.9,0.9,31.91,0.4
+Kelly Oubre Jr.,F-G,GSW,79,16.1,6.4,1.4,1.2,0.8,31.88,0.4
+Delon Wright,G,DET,77,11.3,4.5,4.8,1.6,0.5,30.2,0.39
+Kemba Walker,G,BOS,85,18.2,3.5,4.3,1.1,0.3,33.05,0.39
+Mason Plumlee,C-F,DET,80,9.7,8.4,3.5,0.8,0.9,30.13,0.38
+Terry Rozier,G,CHA,82,17.7,3.5,3.1,1.2,0.3,31.05,0.38
+Will Barton,G,DEN,75,13.6,4.4,3.4,1.0,0.4,28.18,0.38
+Jarrett Allen,C,CLE,84,11.9,9.2,1.6,0.5,1.6,31.64,0.38
+DeAndre Jordan,C,BKN,79,8.4,9.3,1.9,0.4,1.5,28.11,0.36
+Tyler Herro,G,MIA,80,15.1,5.2,3.1,0.6,0.3,28.69,0.36
+Thaddeus Young,F,CHI,80,10.8,5.6,3.7,1.3,0.5,28.47,0.36
+Lauri Markkanen,C-F,CHI,83,17.3,6.2,1.1,0.6,0.5,29.69,0.36
+Lou Williams,G,LAC,80,15.0,2.7,4.5,0.9,0.1,27.99,0.35
+Marcus Smart,G,BOS,80,11.4,2.8,4.8,1.6,0.5,28.26,0.35
+Coby White,G,CHI,79,14.4,4.3,4.3,0.4,0.2,27.81,0.35
+Kyle Anderson,F-G,MEM,81,11.5,5.4,2.9,1.1,0.6,27.43,0.34
+Keldon Johnson,F-G,SAS,80,13.8,5.7,2.0,0.6,0.5,26.94,0.34
+Dillon Brooks,F-G,MEM,76,14.4,2.9,2.2,1.2,0.3,25.68,0.34
+Larry Nance Jr.,C-F,CLE,78,8.9,6.2,2.8,1.5,0.6,26.84,0.34
+Goran Dragic,G,MIA,80,14.1,3.1,4.6,0.6,0.2,27.12,0.34
+Derrick White,G,SAS,79,12.6,2.5,4.0,0.9,0.8,26.7,0.34
+Jakob Poeltl,C,SAS,78,7.3,7.3,2.0,0.6,1.5,25.36,0.33
+Rui Hachimura,F,WAS,77,12.8,5.6,1.7,0.8,0.1,24.77,0.32
+Saddiq Bey,F,DET,78,13.3,5.3,1.6,0.8,0.1,24.76,0.32
+James Wiseman,C,GSW,79,11.9,6.5,0.8,0.3,1.1,25.1,0.32
+Nemanja Bjelica,F,SAC,78,10.9,6.2,2.6,0.4,0.2,24.04,0.31
+Brandon Clarke,F-G,MEM,81,10.9,5.5,1.5,1.1,0.7,25.15,0.31
+Joe Harris,F-G,BKN,79,14.9,3.8,1.8,0.6,0.2,24.56,0.31
+Wendell Carter Jr.,C-F,CHI,80,9.7,7.0,1.8,0.6,0.8,25.0,0.31
+Donte DiVincenzo,G,MIL,77,10.1,4.7,2.8,1.1,0.2,23.84,0.31
+Brook Lopez,C,MIL,78,10.7,4.8,0.8,0.6,1.6,24.26,0.31
+Josh Richardson,F-G,DAL,78,12.9,3.0,2.6,0.9,0.3,24.0,0.31
+Seth Curry,G,PHI,76,13.4,2.2,2.5,0.9,0.3,23.39,0.31
+Cody Zeller,C-F,CHA,79,9.0,6.5,2.1,0.6,0.6,23.55,0.3
+Dwight Howard,C-F,PHI,79,7.9,8.3,0.9,0.5,1.1,24.01,0.3
+Bobby Portis,F,MIL,80,11.1,6.6,1.1,0.8,0.4,24.27,0.3
+Tim Hardaway Jr.,F-G,DAL,79,15.6,2.9,1.6,0.6,0.2,23.88,0.3

@@ -1,0 +1,33 @@
+PLAYER_NAME,position,team,rating
+Dorian Finney-Smith,['F'],DAL,74
+Maxi Kleber,['F'],DAL,75
+Dwight Powell,"['F', 'C']",DAL,76
+Boban Marjanovic,['C'],DAL,75
+James Johnson,['F'],DAL,77
+Tim Hardaway Jr.,"['G', 'F']",DAL,79
+Kristaps Porzingis,"['F', 'C']",DAL,86
+Wes Iwundu,['F'],DAL,72
+Trey Burke,['G'],DAL,77
+Willie Cauley-Stein,['C'],DAL,77
+Josh Richardson,"['G', 'F']",DAL,78
+Gorgui Dieng,['C'],MEM,76
+Tyus Jones,['G'],MEM,75
+Justise Winslow,"['F', 'G']",MEM,77
+Kyle Anderson,"['F', 'G']",MEM,80
+Dillon Brooks,"['G', 'F']",MEM,76
+Jonas Valanciunas,['C'],MEM,82
+LaMarcus Aldridge,"['C', 'F']",SAS,81
+DeMar DeRozan,"['G', 'F']",SAS,87
+Rudy Gay,"['F', 'G']",SAS,78
+Patty Mills,['G'],SAS,78
+Dejounte Murray,['G'],SAS,82
+Jakob Poeltl,['C'],SAS,77
+Derrick White,['G'],SAS,79
+Trey Lyles,['F'],SAS,74
+Davis Bertans,['F'],WAS,76
+Alex Len,['C'],WAS,75
+Ish Smith,['G'],WAS,73
+Bradley Beal,['G'],WAS,91
+Russell Westbrook,['G'],WAS,86
+Robin Lopez,['C'],WAS,76
+Raul Neto,['G'],WAS,76
