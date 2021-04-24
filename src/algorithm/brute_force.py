@@ -3,7 +3,7 @@ import heapq
 import numpy as np
 import pandas as pd
 from src.data_lib.data_pipeline import DataPipeline
-
+from src.utils.notify import sent_ifttt
 
 class BruteForce:
     def __init__(self, maximum_size, valid_players, mode=None):
@@ -13,7 +13,7 @@ class BruteForce:
         self._name_dict = {}
         self._name_set = set()
         self._recommand(valid_players=valid_players)
-        self.print_result()
+        self.send_result()
 
     def _recommand(self, valid_players):
         guards = valid_players[(valid_players.POSITION == "G") | (valid_players.POSITION == "F-G")]
@@ -88,9 +88,11 @@ class BruteForce:
 
         player_1()
 
-    def print_result(self):
+    def send_result(self):
         if not self._mode:
             print("[Today Best Combination]")
+
+        prediction = pd.DataFrame()
 
         check = 1
         # Convert to a maximum heap.
@@ -98,10 +100,20 @@ class BruteForce:
         while len(self._score_heapq) > 0:
             res = heapq._heappop_max(self._score_heapq)
             choice = self._name_dict[res]
-            print(f"[{check} Choice]:")
-            print(' ' * 10, 'Total Rating:', choice['RATING'].sum())
-            print(' ' * 10, 'Total Scores:', round(res, 2))
-            print('-' * 105)
-            print(choice)
-            print('-' * 105)
+            # The prediction dataframe sent to Line notify.
+            prediction = pd.concat([prediction, pd.DataFrame({'PLAYER_NAME': round(res, 2), 'TEAM': check}, index=[0])])
+            prediction = pd.concat([prediction, choice.loc[:, ['PLAYER_NAME', 'TEAM']]])
+            # Print the result.
+            self._print_result(check, res, choice)
             check += 1
+
+        prediction = prediction.set_index('TEAM')
+        sent_ifttt('nba_prediction', prediction)
+
+    def _print_result(self, times, scores, choice):
+        print(f"[{times} Choice]:")
+        print(' ' * 10, 'Total Rating:', choice['RATING'].sum())
+        print(' ' * 10, 'Total Scores:', round(scores, 2))
+        print('-' * 60)
+        print(choice.loc[:, ['PLAYER_NAME', 'POSITION', 'TEAM', 'RATING', 'GP', 'SCR']])
+        print('-' * 60)
