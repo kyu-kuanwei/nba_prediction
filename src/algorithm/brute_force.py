@@ -115,5 +115,5 @@ class BruteForce:
         print(' ' * 10, 'Total Rating:', choice['RATING'].sum())
         print(' ' * 10, 'Total Scores:', round(scores, 2))
         print('-' * 60)
-        print(choice.loc[:, ['PLAYER_NAME', 'POSITION', 'TEAM', 'RATING', 'GP', 'SCR']])
+        print(choice.loc[:, ['PLAYER_NAME', 'POSITION', 'TEAM', 'RATING', 'SCR']])
         print('-' * 60)
