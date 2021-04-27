@@ -1,5 +1,7 @@
 # NBA Prediction
 
+The recommendation system of [UDN NBA Fantasy](https://nba.udn.com/fantasy/fantasy) game.
+
 ## Auto Formatting
 
 ```bash
