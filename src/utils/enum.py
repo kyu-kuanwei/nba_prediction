@@ -14,4 +14,4 @@ class ErrorMessage(Enum):
 
 class Mode(Enum):
     NUMBER_FIVE = "Number_Five"
-    AVERAGE = "Averge"
+    AVERAGE = "Average"
