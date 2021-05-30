@@ -1,0 +1,30 @@
+PLAYER_NAME,POSITION,TEAM,RATING,PTS,REB,AST,STL,BLK,TOV,SCR,AVG
+Ja Morant,G,MEM,85,35.0,6.0,6.0,4.0,0.0,5.0,58.2,0.68
+Draymond Green,F,GSW,80,11.0,16.0,10.0,1.0,1.0,6.0,45.2,0.57
+Stephen Curry,G,GSW,96,39.0,4.0,5.0,3.0,0.0,7.0,53.3,0.56
+Andrew Wiggins,F-G,GSW,80,22.0,10.0,2.0,0.0,2.0,2.0,41.0,0.51
+Kyle Anderson,F-G,MEM,81,9.0,10.0,6.0,1.0,2.0,0.0,39.0,0.48
+Xavier Tillman,F,MEM,76,11.0,7.0,1.0,3.0,1.0,0.0,32.9,0.43
+Grayson Allen,G,MEM,77,12.0,4.0,1.0,4.0,1.0,2.0,31.299999999999997,0.41
+Jordan Poole,G,GSW,77,19.0,3.0,4.0,0.0,1.0,1.0,30.6,0.4
+Kent Bazemore,F-G,GSW,76,10.0,4.0,2.0,2.0,1.0,0.0,26.8,0.35
+Dillon Brooks,F-G,MEM,76,14.0,2.0,3.0,2.0,0.0,1.0,25.9,0.34
+Jonas Valanciunas,C,MEM,83,9.0,12.0,3.0,0.0,0.0,3.0,24.9,0.3
+Juan Toscano-Anderson,F,GSW,74,4.0,7.0,4.0,0.0,1.0,4.0,17.4,0.24
+Desmond Bane,G,MEM,74,10.0,4.0,2.0,0.0,0.0,1.0,16.8,0.23
+Kevon Looney,F,GSW,77,3.0,4.0,3.0,1.0,1.0,1.0,17.3,0.22
+Jaren Jackson Jr.,C-F,MEM,83,10.0,2.0,0.0,0.0,2.0,1.0,17.4,0.21
+De'Anthony Melton,G,MEM,77,5.0,0.0,0.0,0.0,0.0,0.0,5.0,0.06
+Mychal Mulder,G,GSW,71,4.0,0.0,0.0,0.0,0.0,0.0,4.0,0.06
+Tyus Jones,G,MEM,75,2.0,0.0,0.0,0.0,0.0,0.0,2.0,0.03
+Brandon Clarke,F-G,MEM,81,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Killian Tillie,C-F,MEM,67,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Damion Lee,F-G,GSW,73,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+John Konchar,G,MEM,74,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Eric Paschall,F,GSW,77,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Alen Smailagic,F,GSW,71,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Nico Mannion,G,GSW,69,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Justise Winslow,F-G,MEM,75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Jordan Bell,F,GSW,74,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Gary Payton II,G,GSW,72,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Tim Frazier,G,MEM,72,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

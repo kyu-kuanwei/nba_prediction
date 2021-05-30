@@ -27,6 +27,7 @@ class PlayerStats:
         self._last_n_games = self._configs['last_n_games']
         self._injuries_url = self._configs['injuries_url']
         self._number_five_url = self._configs['number_five_url']
+        print(self._number_five_url)
 
     def _teams_play_today(self):
         today_date = DataPath.today_date.strftime('%T%m%d')
@@ -69,7 +70,11 @@ class PlayerStats:
                 stats.append(clean[5:])
             except:
                 continue
-        print("Finish scraping number five data.")
+
+        if not stats:
+            print("Failed to scrape data from number_five.")
+        else:
+            print("Finish scraping number five data.")
 
         return stats
 
@@ -145,7 +150,10 @@ class PlayerStats:
             for injury in self._injuries['Player']:
                 # Check name.
                 if fuzz.ratio(player, injury) >= 80:
-                    self._all_players.drop(idx, inplace=True)
+                    try:
+                        self._all_players.drop(idx, inplace=True)
+                    except:
+                        continue
 
     @property
     def all_players(self):
