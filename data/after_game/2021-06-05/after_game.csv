@@ -1,0 +1,31 @@
+PLAYER_NAME,POSITION,TEAM,RATING,PTS,REB,AST,STL,BLK,TOV,SCR,AVG
+Luka Doncic,F-G,DAL,94,29.0,8.0,11.0,4.0,0.0,3.0,64.1,0.68
+Kawhi Leonard,F,LAC,96,45.0,6.0,3.0,2.0,0.0,4.0,58.7,0.61
+Paul George,F,LAC,88,20.0,13.0,6.0,0.0,3.0,5.0,48.6,0.55
+Reggie Jackson,G,LAC,79,25.0,9.0,4.0,1.0,0.0,4.0,40.8,0.52
+Dorian Finney-Smith,F,DAL,75,11.0,7.0,4.0,2.0,0.0,3.0,28.4,0.38
+Kristaps Porzingis,C-F,DAL,86,7.0,5.0,3.0,3.0,1.0,1.0,28.5,0.33
+Boban Marjanovic,C,DAL,75,12.0,9.0,1.0,0.0,0.0,1.0,23.299999999999997,0.31
+Tim Hardaway Jr.,F-G,DAL,80,23.0,1.0,0.0,0.0,0.0,0.0,24.2,0.3
+Nicolas Batum,F-G,LAC,76,6.0,5.0,3.0,2.0,0.0,0.0,22.5,0.3
+Marcus Morris Sr.,F,LAC,79,4.0,3.0,1.0,1.0,0.0,0.0,12.1,0.15
+Willie Cauley-Stein,C,DAL,76,2.0,4.0,1.0,0.0,1.0,0.0,11.3,0.15
+Jalen Brunson,G,DAL,80,7.0,4.0,0.0,0.0,0.0,2.0,9.8,0.12
+Ivica Zubac,C,LAC,79,2.0,6.0,0.0,0.0,0.0,0.0,9.2,0.12
+Josh Richardson,G,DAL,77,6.0,1.0,1.0,0.0,0.0,1.0,7.699999999999999,0.1
+Luke Kennard,G,LAC,76,2.0,0.0,0.0,1.0,0.0,0.0,5.0,0.07
+Maxi Kleber,F,DAL,73,0.0,3.0,0.0,0.0,0.0,0.0,3.5999999999999996,0.05
+Dwight Powell,C-F,DAL,77,0.0,0.0,2.0,0.0,0.0,0.0,3.0,0.04
+Rajon Rondo,G,LAC,76,0.0,0.0,1.0,0.0,0.0,0.0,1.5,0.02
+Josh Green,G,DAL,72,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Patrick Patterson,F,LAC,71,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Daniel Oturu,C,LAC,71,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Trey Burke,G,DAL,76,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Terance Mann,F-G,LAC,76,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Nate Hinton,F-G,DAL,67,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Yogi Ferrell,G,LAC,71,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+DeMarcus Cousins,C,LAC,78,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Amir Coffey,F-G,LAC,71,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Patrick Beverley,G,LAC,78,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Nicolo Melli,F,DAL,73,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Tyler Bey,F,DAL,70,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

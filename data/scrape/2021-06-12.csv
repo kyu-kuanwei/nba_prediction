@@ -1,0 +1,35 @@
+PLAYER_NAME,position,team,rating
+Reggie Jackson,['G'],LAC,79
+Nicolas Batum,"['G', 'F']",LAC,76
+Patrick Beverley,['G'],LAC,78
+Amir Coffey,"['G', 'F']",LAC,71
+DeMarcus Cousins,['C'],LAC,78
+Yogi Ferrell,['G'],LAC,71
+Paul George,['F'],LAC,88
+Serge Ibaka,['F'],LAC,81
+Luke Kennard,['G'],LAC,76
+Kawhi Leonard,['F'],LAC,96
+Terance Mann,"['G', 'F']",LAC,76
+Marcus Morris Sr.,['F'],LAC,79
+Daniel Oturu,['C'],LAC,71
+Patrick Patterson,['F'],LAC,71
+Rajon Rondo,['G'],LAC,76
+Jay Scrubb,['G'],LAC,67
+Ivica Zubac,['C'],LAC,79
+Donovan Mitchell,['G'],UTA,88
+Juwan Morgan,['F'],UTA,70
+Georges Niang,['F'],UTA,73
+Royce O'Neale,['F'],UTA,73
+Miye Oni,"['G', 'F']",UTA,70
+Matt Thomas,['G'],UTA,72
+Jordan Clarkson,['G'],UTA,79
+Mike Conley,['G'],UTA,84
+Derrick Favors,['F'],UTA,79
+Trent Forrest,['G'],UTA,67
+Rudy Gobert,['C'],UTA,88
+Elijah Hughes,['G'],UTA,70
+Ersan Ilyasova,['F'],UTA,76
+Joe Ingles,"['F', 'G']",UTA,82
+Udoka Azubuike,"['C', 'F']",UTA,71
+Bojan Bogdanovic,['F'],UTA,77
+Jarrell Brantley,['F'],UTA,67

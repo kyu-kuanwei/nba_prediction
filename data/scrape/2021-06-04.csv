@@ -1,0 +1,35 @@
+PLAYER_NAME,position,team,rating
+Tyler Bey,['F'],DAL,70
+Jalen Brunson,['G'],DAL,80
+Trey Burke,['G'],DAL,76
+Willie Cauley-Stein,['C'],DAL,76
+Luka Doncic,"['F', 'G']",DAL,94
+Dorian Finney-Smith,['F'],DAL,75
+Josh Green,['G'],DAL,72
+Tim Hardaway Jr.,"['G', 'F']",DAL,80
+Nate Hinton,"['G', 'F']",DAL,67
+Maxi Kleber,['F'],DAL,73
+Boban Marjanovic,['C'],DAL,75
+Nicolo Melli,['F'],DAL,73
+Kristaps Porzingis,"['F', 'C']",DAL,86
+Dwight Powell,"['F', 'C']",DAL,77
+JJ Redick,['G'],DAL,75
+Josh Richardson,['G'],DAL,77
+Tyrell Terry,['G'],DAL,71
+Reggie Jackson,['G'],LAC,79
+Nicolas Batum,"['G', 'F']",LAC,76
+Patrick Beverley,['G'],LAC,78
+Amir Coffey,"['G', 'F']",LAC,71
+DeMarcus Cousins,['C'],LAC,78
+Yogi Ferrell,['G'],LAC,71
+Paul George,['F'],LAC,88
+Serge Ibaka,['F'],LAC,81
+Luke Kennard,['G'],LAC,76
+Kawhi Leonard,['F'],LAC,96
+Terance Mann,"['G', 'F']",LAC,76
+Marcus Morris Sr.,['F'],LAC,79
+Daniel Oturu,['C'],LAC,71
+Patrick Patterson,['F'],LAC,71
+Rajon Rondo,['G'],LAC,76
+Jay Scrubb,['G'],LAC,67
+Ivica Zubac,['C'],LAC,79

@@ -1,0 +1,32 @@
+PLAYER_NAME,position,team,rating
+Bruce Brown,"['G', 'F']",BKN,78
+Chris Chiozza,['G'],BKN,72
+Nicolas Claxton,"['F', 'C']",BKN,76
+Joe Harris,"['G', 'F']",BKN,79
+Kyrie Irving,['G'],BKN,91
+Mike James,['G'],BKN,71
+Alize Johnson,['F'],BKN,74
+Tyler Johnson,['G'],BKN,71
+DeAndre Jordan,['C'],BKN,79
+Timothe Luwawu-Cabarrot,"['G', 'F']",BKN,71
+Reggie Perry,"['F', 'C']",BKN,72
+Landry Shamet,['G'],BKN,74
+Kevin Durant,['F'],BKN,96
+Jeff Green,['F'],BKN,76
+Blake Griffin,['F'],BKN,77
+James Harden,['G'],BKN,95
+Khris Middleton,['F'],MIL,85
+Jordan Nwora,['F'],MIL,73
+Bobby Portis,['F'],MIL,81
+Jeff Teague,['G'],MIL,74
+Axel Toupane,"['G', 'F']",MIL,69
+P.J. Tucker,['F'],MIL,74
+Mamadi Diakite,['F'],MIL,68
+Justin Jackson,['F'],MIL,74
+Brook Lopez,['C'],MIL,79
+Sam Merrill,['G'],MIL,70
+Bryn Forbes,['G'],MIL,76
+Jrue Holiday,['G'],MIL,86
+Thanasis Antetokounmpo,['F'],MIL,73
+Giannis Antetokounmpo,['F'],MIL,96
+Pat Connaughton,['G'],MIL,73

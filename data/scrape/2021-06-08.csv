@@ -1,0 +1,68 @@
+PLAYER_NAME,position,team,rating
+Bogdan Bogdanovic,['G'],ATL,81
+Clint Capela,['C'],ATL,86
+John Collins,"['F', 'C']",ATL,85
+Kris Dunn,['G'],ATL,76
+Bruno Fernando,"['F', 'C']",ATL,72
+Danilo Gallinari,['F'],ATL,81
+Solomon Hill,['F'],ATL,70
+Kevin Huerter,"['G', 'F']",ATL,76
+De'Andre Hunter,"['F', 'G']",ATL,81
+Nathan Knight,"['F', 'C']",ATL,73
+Skylar Mays,['G'],ATL,71
+Onyeka Okongwu,"['F', 'C']",ATL,76
+Cam Reddish,"['F', 'G']",ATL,74
+Tony Snell,['G'],ATL,74
+Lou Williams,['G'],ATL,79
+Trae Young,['G'],ATL,87
+Reggie Jackson,['G'],LAC,79
+Nicolas Batum,"['G', 'F']",LAC,76
+Patrick Beverley,['G'],LAC,78
+Amir Coffey,"['G', 'F']",LAC,71
+DeMarcus Cousins,['C'],LAC,78
+Yogi Ferrell,['G'],LAC,71
+Paul George,['F'],LAC,88
+Serge Ibaka,['F'],LAC,81
+Luke Kennard,['G'],LAC,76
+Kawhi Leonard,['F'],LAC,96
+Terance Mann,"['G', 'F']",LAC,76
+Marcus Morris Sr.,['F'],LAC,79
+Daniel Oturu,['C'],LAC,71
+Patrick Patterson,['F'],LAC,71
+Rajon Rondo,['G'],LAC,76
+Jay Scrubb,['G'],LAC,67
+Ivica Zubac,['C'],LAC,79
+Paul Reed,['F'],PHI,71
+Mike Scott,['F'],PHI,70
+Ben Simmons,"['G', 'F']",PHI,86
+Matisse Thybulle,"['G', 'F']",PHI,74
+Anthony Tolliver,['F'],PHI,71
+Rayjon Tucker,['G'],PHI,69
+Danny Green,['G'],PHI,76
+Tobias Harris,['F'],PHI,87
+George Hill,['G'],PHI,77
+Dwight Howard,"['C', 'F']",PHI,80
+Isaiah Joe,['G'],PHI,71
+Furkan Korkmaz,"['G', 'F']",PHI,76
+Tyrese Maxey,['G'],PHI,77
+Shake Milton,"['G', 'F']",PHI,78
+Gary Clark,['F'],PHI,71
+Seth Curry,['G'],PHI,76
+Joel Embiid,"['C', 'F']",PHI,95
+Donovan Mitchell,['G'],UTA,88
+Juwan Morgan,['F'],UTA,70
+Georges Niang,['F'],UTA,73
+Royce O'Neale,['F'],UTA,73
+Miye Oni,"['G', 'F']",UTA,70
+Matt Thomas,['G'],UTA,72
+Jordan Clarkson,['G'],UTA,79
+Mike Conley,['G'],UTA,84
+Derrick Favors,['F'],UTA,79
+Trent Forrest,['G'],UTA,67
+Rudy Gobert,['C'],UTA,88
+Elijah Hughes,['G'],UTA,70
+Ersan Ilyasova,['F'],UTA,76
+Joe Ingles,"['F', 'G']",UTA,82
+Udoka Azubuike,"['C', 'F']",UTA,71
+Bojan Bogdanovic,['F'],UTA,77
+Jarrell Brantley,['F'],UTA,67

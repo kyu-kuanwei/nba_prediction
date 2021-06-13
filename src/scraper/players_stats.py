@@ -17,9 +17,9 @@ class PlayerStats:
         # Scrape from espn website to get the teams today.
         self._today_matchups: dict = {}
         self._all_players = self._find_players()
-        self._injuries = self._injuries_players()
+        # self._injuries = self._injuries_players()
         # Filter out injuries.
-        self._filter_injuries()
+        # self._filter_injuries()
 
     def _load_configs(self):
         self._configs = LoadConfig.config

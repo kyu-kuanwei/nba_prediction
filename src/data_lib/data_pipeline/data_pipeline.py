@@ -74,7 +74,7 @@ class DataPipeline:
 
         valid_players = valid_players.reindex(columns=column_names)
 
-        return valid_players.loc[:70]
+        return valid_players
 
     def export_to_csv(self, valid_players, mode=None):
         if mode:

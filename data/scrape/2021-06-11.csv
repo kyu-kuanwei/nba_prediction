@@ -1,0 +1,66 @@
+PLAYER_NAME,position,team,rating
+Bogdan Bogdanovic,['G'],ATL,81
+Clint Capela,['C'],ATL,86
+John Collins,"['F', 'C']",ATL,85
+Kris Dunn,['G'],ATL,76
+Bruno Fernando,"['F', 'C']",ATL,72
+Danilo Gallinari,['F'],ATL,81
+Solomon Hill,['F'],ATL,70
+Kevin Huerter,"['G', 'F']",ATL,76
+De'Andre Hunter,"['F', 'G']",ATL,81
+Nathan Knight,"['F', 'C']",ATL,73
+Skylar Mays,['G'],ATL,71
+Onyeka Okongwu,"['F', 'C']",ATL,76
+Cam Reddish,"['F', 'G']",ATL,74
+Tony Snell,['G'],ATL,74
+Lou Williams,['G'],ATL,79
+Trae Young,['G'],ATL,87
+Will Barton,['G'],DEN,77
+Bol Bol,"['C', 'F']",DEN,72
+Facundo Campazzo,['G'],DEN,74
+Vlatko Cancar,['F'],DEN,70
+PJ Dozier,"['G', 'F']",DEN,72
+Aaron Gordon,['F'],DEN,79
+JaMychal Green,"['F', 'C']",DEN,78
+Shaquille Harrison,['G'],DEN,73
+Markus Howard,['G'],DEN,67
+Nikola Jokic,['C'],DEN,96
+JaVale McGee,"['C', 'F']",DEN,78
+Paul Millsap,['F'],DEN,79
+Monte Morris,['G'],DEN,79
+Zeke Nnaji,"['F', 'C']",DEN,73
+Michael Porter Jr.,['F'],DEN,85
+Austin Rivers,['G'],DEN,74
+Paul Reed,['F'],PHI,71
+Mike Scott,['F'],PHI,70
+Ben Simmons,"['G', 'F']",PHI,86
+Matisse Thybulle,"['G', 'F']",PHI,74
+Anthony Tolliver,['F'],PHI,71
+Rayjon Tucker,['G'],PHI,69
+Danny Green,['G'],PHI,76
+Tobias Harris,['F'],PHI,87
+George Hill,['G'],PHI,77
+Dwight Howard,"['C', 'F']",PHI,80
+Isaiah Joe,['G'],PHI,71
+Furkan Korkmaz,"['G', 'F']",PHI,76
+Tyrese Maxey,['G'],PHI,77
+Shake Milton,"['G', 'F']",PHI,78
+Gary Clark,['F'],PHI,71
+Seth Curry,['G'],PHI,76
+Joel Embiid,"['C', 'F']",PHI,95
+Ty-Shon Alexander,['G'],PHX,67
+Devin Booker,['G'],PHX,89
+Mikal Bridges,['F'],PHX,83
+Jevon Carter,['G'],PHX,74
+Torrey Craig,['F'],PHX,79
+Jae Crowder,['F'],PHX,77
+Langston Galloway,['G'],PHX,76
+Cameron Johnson,['F'],PHX,77
+Frank Kaminsky,"['F', 'C']",PHX,79
+E'Twaun Moore,['G'],PHX,73
+Abdel Nader,['F'],PHX,75
+Chris Paul,['G'],PHX,89
+Cameron Payne,['G'],PHX,77
+Dario Saric,"['F', 'C']",PHX,79
+Jalen Smith,"['F', 'C']",PHX,72
+Deandre Ayton,['C'],PHX,85
